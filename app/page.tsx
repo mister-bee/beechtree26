@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Shield, Users, Lock, CheckCircle2, ArrowRight } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function HomePage() {
   return (
@@ -19,9 +20,9 @@ export default function HomePage() {
               <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Features
               </a>
-              <a href="#software" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/software" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Software
-              </a>
+              </Link>
               <a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Testimonials
               </a>
@@ -49,10 +50,12 @@ export default function HomePage() {
               for personalized learning.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 min-w-[180px]">
-                Explore Software
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
+              <Link href="/software">
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 min-w-[180px]">
+                  Explore Software
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
               <Button
                 size="lg"
                 variant="outline"
@@ -165,10 +168,12 @@ export default function HomePage() {
                   <span className="text-foreground">24/7 support and professional development</span>
                 </li>
               </ul>
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Learn More About Our Software
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
+              <Link href="/software">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                  Learn More About Our Software
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full" />

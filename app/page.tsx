@@ -26,6 +26,9 @@ export default function HomePage() {
               <a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Testimonials
               </a>
+              <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Contact
+              </Link>
               <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
                 Get Started
               </Button>
@@ -187,33 +190,170 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonial */}
+      {/* Testimonials */}
       <section id="testimonials" className="py-20 px-4 lg:px-8 bg-accent/30">
-        <div className="container mx-auto max-w-4xl">
-          <Card className="bg-card border-border/50 shadow-xl">
-            <CardContent className="p-12 text-center space-y-6">
-              <div className="flex justify-center">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3].map((i) => (
-                    <div
-                      key={i}
-                      className="w-10 h-10 rounded-full bg-primary/20 border-2 border-card flex items-center justify-center text-primary font-semibold"
-                    >
-                      {String.fromCharCode(64 + i)}
-                    </div>
-                  ))}
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
+              What Educators Are Saying
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+              Hear from teachers and administrators who use BeechTree every day
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Principal */}
+            <Card className="bg-card border-border/50 shadow-lg">
+              <CardContent className="p-8 space-y-4">
+                <div className="flex justify-center">
+                  <div className="flex -space-x-2">
+                    {[1, 2, 3].map((i) => (
+                      <div
+                        key={i}
+                        className="w-8 h-8 rounded-full bg-primary/20 border-2 border-card flex items-center justify-center text-primary font-semibold text-sm"
+                      >
+                        {String.fromCharCode(64 + i)}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <blockquote className="text-2xl md:text-3xl font-medium text-card-foreground text-balance leading-relaxed">
-                "BeechTree has revolutionized the way our teachers interact with students, enhancing engagement and
-                safety in the classroom."
-              </blockquote>
-              <div className="space-y-1">
-                <p className="font-semibold text-foreground">Sarah Johnson</p>
-                <p className="text-sm text-muted-foreground">School Principal, Lincoln Elementary</p>
-              </div>
-            </CardContent>
-          </Card>
+                <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
+                  &ldquo;BeechTree has revolutionized the way our teachers interact with students, enhancing engagement and
+                  safety in the classroom.&rdquo;
+                </blockquote>
+                <div className="text-center space-y-1">
+                  <p className="font-semibold text-foreground">Sarah Johnson</p>
+                  <p className="text-sm text-muted-foreground">School Principal, Lincoln Elementary</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* 6th Grade Teacher */}
+            <Card className="bg-card border-border/50 shadow-lg">
+              <CardContent className="p-8 space-y-4">
+                <div className="flex justify-center">
+                  <div className="flex -space-x-2">
+                    {[4, 5, 6].map((i) => (
+                      <div
+                        key={i}
+                        className="w-8 h-8 rounded-full bg-primary/20 border-2 border-card flex items-center justify-center text-primary font-semibold text-sm"
+                      >
+                        {String.fromCharCode(64 + i)}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
+                  &ldquo;My students are more engaged than ever. The AI adapts to each learner&apos;s pace, making differentiation so much easier.&rdquo;
+                </blockquote>
+                <div className="text-center space-y-1">
+                  <p className="font-semibold text-foreground">Michael Torres</p>
+                  <p className="text-sm text-muted-foreground">6th Grade Teacher, Westside Middle School</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Literacy Coach */}
+            <Card className="bg-card border-border/50 shadow-lg">
+              <CardContent className="p-8 space-y-4">
+                <div className="flex justify-center">
+                  <div className="flex -space-x-2">
+                    {[7, 8, 9].map((i) => (
+                      <div
+                        key={i}
+                        className="w-8 h-8 rounded-full bg-primary/20 border-2 border-card flex items-center justify-center text-primary font-semibold text-sm"
+                      >
+                        {String.fromCharCode(64 + i)}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
+                  &ldquo;The Reading Adventures program has transformed our literacy intervention. Students are making real progress with phonics.&rdquo;
+                </blockquote>
+                <div className="text-center space-y-1">
+                  <p className="font-semibold text-foreground">Amanda Chen</p>
+                  <p className="text-sm text-muted-foreground">Literacy Coach, Riverside School District</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* After School Club */}
+            <Card className="bg-card border-border/50 shadow-lg">
+              <CardContent className="p-8 space-y-4">
+                <div className="flex justify-center">
+                  <div className="flex -space-x-2">
+                    {[10, 11, 12].map((i) => (
+                      <div
+                        key={i}
+                        className="w-8 h-8 rounded-full bg-primary/20 border-2 border-card flex items-center justify-center text-primary font-semibold text-sm"
+                      >
+                        {String.fromCharCode(64 + i)}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
+                  &ldquo;Art Bee and Picture Books are favorites in our after-school program. Kids create amazing projects while building real skills.&rdquo;
+                </blockquote>
+                <div className="text-center space-y-1">
+                  <p className="font-semibold text-foreground">David Martinez</p>
+                  <p className="text-sm text-muted-foreground">After School Program Director, Community Center</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* 2nd Grade Teacher */}
+            <Card className="bg-card border-border/50 shadow-lg">
+              <CardContent className="p-8 space-y-4">
+                <div className="flex justify-center">
+                  <div className="flex -space-x-2">
+                    {[13, 14, 15].map((i) => (
+                      <div
+                        key={i}
+                        className="w-8 h-8 rounded-full bg-primary/20 border-2 border-card flex items-center justify-center text-primary font-semibold text-sm"
+                      >
+                        {String.fromCharCode(64 + i)}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
+                  &ldquo;Kansha has completely changed my classroom culture. Students are kinder to each other and excited to earn recognition.&rdquo;
+                </blockquote>
+                <div className="text-center space-y-1">
+                  <p className="font-semibold text-foreground">Jennifer Williams</p>
+                  <p className="text-sm text-muted-foreground">2nd Grade Teacher, Oakwood Elementary</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Special Ed Teacher */}
+            <Card className="bg-card border-border/50 shadow-lg">
+              <CardContent className="p-8 space-y-4">
+                <div className="flex justify-center">
+                  <div className="flex -space-x-2">
+                    {[16, 17, 18].map((i) => (
+                      <div
+                        key={i}
+                        className="w-8 h-8 rounded-full bg-primary/20 border-2 border-card flex items-center justify-center text-primary font-semibold text-sm"
+                      >
+                        {String.fromCharCode(64 + i)}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
+                  &ldquo;BeSO&apos;s mindfulness tools help my students self-regulate. The calming exercises have reduced meltdowns significantly.&rdquo;
+                </blockquote>
+                <div className="text-center space-y-1">
+                  <p className="font-semibold text-foreground">Rachel Thompson</p>
+                  <p className="text-sm text-muted-foreground">Special Education Teacher, Maple Grove School</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
@@ -284,9 +424,9 @@ export default function HomePage() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

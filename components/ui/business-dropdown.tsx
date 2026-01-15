@@ -40,7 +40,7 @@ export function BusinessDropdown({ currentBusiness }: BusinessDropdownProps) {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <button className="flex items-center gap-2 outline-none focus:ring-2 focus:ring-primary/50 rounded-lg px-2 py-1 -ml-2 hover:bg-accent/50 transition-colors">
+        <button className="flex items-center gap-2 outline-none focus:ring-2 focus:ring-gray-300 rounded-lg px-2 py-1 -ml-2 hover:bg-gray-100 transition-colors">
           <Image
             src="/images/treelogo2.webp"
             alt="BeechTree Logo"
@@ -49,18 +49,18 @@ export function BusinessDropdown({ currentBusiness }: BusinessDropdownProps) {
             className="w-8 h-8"
           />
           <span className="text-xl font-semibold text-foreground">BeechTree</span>
-          <ChevronDown className="w-4 h-4 text-muted-foreground" />
+          <ChevronDown className="w-4 h-4 text-gray-500" />
         </button>
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content
-          className="min-w-[240px] bg-card border border-border rounded-xl shadow-lg p-2 z-50 animate-in fade-in-0 zoom-in-95"
+          className="min-w-[240px] bg-white border border-gray-200 rounded-xl shadow-lg p-2 z-50 animate-in fade-in-0 zoom-in-95"
           sideOffset={8}
           align="start"
         >
           <div className="px-3 py-2 mb-1">
-            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+            <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">
               Business Areas
             </p>
           </div>
@@ -75,27 +75,27 @@ export function BusinessDropdown({ currentBusiness }: BusinessDropdownProps) {
                   href={business.href}
                   className={`flex items-center gap-3 px-3 py-3 rounded-lg outline-none cursor-pointer transition-colors ${
                     isActive
-                      ? "bg-primary/10 text-primary"
-                      : "hover:bg-accent text-foreground"
+                      ? "bg-gray-100 text-gray-900"
+                      : "hover:bg-gray-50 text-gray-700"
                   }`}
                 >
                   <div
                     className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                      isActive ? "bg-primary/20" : "bg-accent"
+                      isActive ? "bg-gray-200" : "bg-gray-100"
                     }`}
                   >
-                    <Icon className={`w-5 h-5 ${isActive ? "text-primary" : "text-muted-foreground"}`} />
+                    <Icon className={`w-5 h-5 ${isActive ? "text-gray-900" : "text-gray-500"}`} />
                   </div>
                   <div className="flex-1">
-                    <p className={`font-medium ${isActive ? "text-primary" : ""}`}>
+                    <p className={`font-medium ${isActive ? "text-gray-900" : "text-gray-700"}`}>
                       {business.name}
                     </p>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-xs text-gray-500">
                       {business.description}
                     </p>
                   </div>
                   {isActive && (
-                    <div className="w-2 h-2 rounded-full bg-primary" />
+                    <div className="w-2 h-2 rounded-full bg-gray-900" />
                   )}
                 </Link>
               </DropdownMenu.Item>

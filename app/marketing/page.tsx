@@ -7,7 +7,7 @@ import { BusinessDropdown } from "@/components/ui/business-dropdown"
 
 export default function MarketingPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background theme-blue">
       {/* Navigation */}
       <nav className="border-b border-border/40 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 bg-background/95">
         <div className="container mx-auto px-4 lg:px-8">

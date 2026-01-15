@@ -1,25 +1,25 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { BusinessDropdown } from "@/components/ui/business-dropdown"
-import { Shield, Users, Lock, CheckCircle2, ArrowRight } from "lucide-react"
+import { BarChart3, Target, Zap, CheckCircle2, ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { BusinessDropdown } from "@/components/ui/business-dropdown"
 
-export default function HomePage() {
+export default function MarketingPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="border-b border-border/40 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 bg-background/95">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <BusinessDropdown currentBusiness="education" />
+            <BusinessDropdown currentBusiness="marketing" />
             <div className="hidden md:flex items-center gap-8">
               <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Features
               </a>
-              <Link href="/software" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Software
-              </Link>
+              <a href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Services
+              </a>
               <a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Testimonials
               </a>
@@ -40,29 +40,29 @@ export default function HomePage() {
           <div className="text-center space-y-6 max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              AI-Powered Education Platform
+              AI-Powered Marketing
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground text-balance">
-              Safe AI for Every Classroom
+              Grow Your Business with AI
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-              BeechTree prioritizes student privacy and data security while empowering teachers with intuitive AI tools
-              for personalized learning.
+              BeechTree Marketing leverages cutting-edge AI to create data-driven campaigns that deliver real results
+              for your business.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Link href="/software">
+              <Link href="#services">
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 min-w-[180px]">
-                  Explore Software
+                  Explore Services
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
-              <Link href="/demo">
+              <Link href="/contact">
                 <Button
                   size="lg"
                   variant="outline"
                   className="min-w-[180px] border-border hover:bg-accent bg-transparent"
                 >
-                  Request Demo
+                  Request Consultation
                 </Button>
               </Link>
             </div>
@@ -70,15 +70,23 @@ export default function HomePage() {
 
           <div className="mt-16 relative">
             <div className="absolute inset-0 bg-primary/5 blur-3xl rounded-full" />
-            <Image
-              src="/images/classroom1.webp"
-              alt="Engaged students raising hands in classroom"
-              width={1200}
-              height={600}
-              className="w-full h-auto rounded-xl shadow-2xl border border-border/50 relative z-10"
-            />
+            <div className="relative z-10 bg-card border border-border/50 rounded-xl shadow-2xl p-8 md:p-12">
+              <div className="grid md:grid-cols-3 gap-8 text-center">
+                <div>
+                  <p className="text-4xl font-bold text-primary">3x</p>
+                  <p className="text-muted-foreground mt-2">Average ROI increase</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-bold text-primary">50%</p>
+                  <p className="text-muted-foreground mt-2">Time saved on campaigns</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-bold text-primary">10k+</p>
+                  <p className="text-muted-foreground mt-2">Campaigns optimized</p>
+                </div>
+              </div>
+            </div>
           </div>
-          {/* </CHANGE> */}
         </div>
       </section>
 
@@ -87,10 +95,10 @@ export default function HomePage() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
-              Built for Educators, Designed for Students
+              Marketing Intelligence That Works
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Our platform combines cutting-edge AI with uncompromising safety standards
+              Our AI-powered platform transforms your marketing strategy with data-driven insights
             </p>
           </div>
 
@@ -98,12 +106,12 @@ export default function HomePage() {
             <Card className="bg-card border-border/50 hover:border-primary/50 transition-all hover:shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Shield className="w-6 h-6 text-primary" />
+                  <BarChart3 className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-card-foreground">Safe & Private AI</h3>
+                <h3 className="text-xl font-semibold text-card-foreground">Data-Driven Campaigns</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  BeechTree prioritizes student privacy and data security to ensure safe classroom experiences with
-                  enterprise-grade protection.
+                  Leverage AI analytics to create campaigns that resonate with your target audience and drive
+                  measurable results.
                 </p>
               </CardContent>
             </Card>
@@ -111,12 +119,12 @@ export default function HomePage() {
             <Card className="bg-card border-border/50 hover:border-primary/50 transition-all hover:shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Users className="w-6 h-6 text-primary" />
+                  <Zap className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-card-foreground">Teacher-Friendly Interface</h3>
+                <h3 className="text-xl font-semibold text-card-foreground">Content Automation</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our intuitive design allows educators to easily customize learning paths for diverse classroom needs
-                  without technical expertise.
+                  Generate high-quality marketing content at scale with AI-powered copywriting and creative
+                  automation tools.
                 </p>
               </CardContent>
             </Card>
@@ -124,12 +132,12 @@ export default function HomePage() {
             <Card className="bg-card border-border/50 hover:border-primary/50 transition-all hover:shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Lock className="w-6 h-6 text-primary" />
+                  <Target className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-card-foreground">Compliance Ready</h3>
+                <h3 className="text-xl font-semibold text-card-foreground">Precision Targeting</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Built to meet FERPA, COPPA, and state privacy laws, giving administrators peace of mind and full
-                  transparency.
+                  Reach the right audience at the right time with AI-optimized audience segmentation and
+                  personalization.
                 </p>
               </CardContent>
             </Card>
@@ -137,53 +145,64 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Platform Overview */}
-      <section id="software" className="py-20 px-4 lg:px-8">
+      {/* Services Overview */}
+      <section id="services" className="py-20 px-4 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary">
-                Platform Overview
+                Our Services
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
-                AI That Adapts to Your Classroom
+                Full-Stack Marketing Solutions
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                BeechTree leverages advanced AI to create personalized learning experiences while maintaining the
-                highest standards of safety and privacy.
+                From strategy to execution, BeechTree Marketing provides end-to-end solutions powered by
+                artificial intelligence.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Personalized learning paths for each student</span>
+                  <span className="text-foreground">SEO optimization and content strategy</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Real-time insights and analytics for educators</span>
+                  <span className="text-foreground">Social media management and analytics</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Seamless integration with existing LMS platforms</span>
+                  <span className="text-foreground">Email marketing automation</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">24/7 support and professional development</span>
+                  <span className="text-foreground">Paid advertising and PPC management</span>
                 </li>
               </ul>
-              <Link href="/software">
+              <Link href="/contact">
                 <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-                  Learn More About Our Software
+                  Schedule a Consultation
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full" />
-              <img
-                src="/teacher-dashboard-interface-education-technology.jpg"
-                alt="BeechTree platform interface"
-                className="w-full h-auto rounded-xl shadow-2xl border border-border/50 relative z-10"
-              />
+              <div className="relative z-10 bg-card border border-border/50 rounded-xl shadow-2xl p-8">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                      <BarChart3 className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground">Campaign Analytics</p>
+                      <p className="text-sm text-muted-foreground">Real-time performance tracking</p>
+                    </div>
+                  </div>
+                  <div className="h-32 bg-accent/50 rounded-lg flex items-center justify-center">
+                    <p className="text-muted-foreground">Analytics Dashboard Preview</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -194,89 +213,46 @@ export default function HomePage() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
-              What Educators Are Saying
+              Trusted by Growing Businesses
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Hear from teachers and administrators who use BeechTree every day
+              See what our clients say about BeechTree Marketing
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Principal */}
             <Card className="bg-card border-border/50 shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
-                  &ldquo;BeechTree has revolutionized the way our teachers interact with students, enhancing engagement and
-                  safety in the classroom.&rdquo;
+                  &ldquo;BeechTree&apos;s AI-driven approach doubled our lead generation in just three months.&rdquo;
                 </blockquote>
                 <div className="text-center space-y-1">
-                  <p className="font-semibold text-foreground">Sarah J.</p>
-                  <p className="text-sm text-muted-foreground">School Principal</p>
+                  <p className="font-semibold text-foreground">Marketing Director</p>
+                  <p className="text-sm text-muted-foreground">Tech Startup</p>
                 </div>
               </CardContent>
             </Card>
 
-            {/* 6th Grade Teacher */}
             <Card className="bg-card border-border/50 shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
-                  &ldquo;My students are more engaged than ever. The AI adapts to each learner&apos;s pace, making differentiation so much easier.&rdquo;
+                  &ldquo;The content automation tools have transformed how we approach social media marketing.&rdquo;
                 </blockquote>
                 <div className="text-center space-y-1">
-                  <p className="font-semibold text-foreground">Michael T.</p>
-                  <p className="text-sm text-muted-foreground">6th Grade Teacher</p>
+                  <p className="font-semibold text-foreground">Brand Manager</p>
+                  <p className="text-sm text-muted-foreground">E-commerce Company</p>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Literacy Coach */}
             <Card className="bg-card border-border/50 shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
-                  &ldquo;The Reading Adventures program has transformed our literacy intervention. Students are making real progress with phonics.&rdquo;
+                  &ldquo;Finally, a marketing partner that understands data and delivers real ROI.&rdquo;
                 </blockquote>
                 <div className="text-center space-y-1">
-                  <p className="font-semibold text-foreground">Amanda C.</p>
-                  <p className="text-sm text-muted-foreground">Literacy Coach</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* After School Club */}
-            <Card className="bg-card border-border/50 shadow-lg">
-              <CardContent className="p-8 space-y-4">
-                <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
-                  &ldquo;Art Bee and Picture Books are favorites in our after-school program. Kids create amazing projects while building real skills.&rdquo;
-                </blockquote>
-                <div className="text-center space-y-1">
-                  <p className="font-semibold text-foreground">David M.</p>
-                  <p className="text-sm text-muted-foreground">After School Program Director</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* 2nd Grade Teacher */}
-            <Card className="bg-card border-border/50 shadow-lg">
-              <CardContent className="p-8 space-y-4">
-                <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
-                  &ldquo;Kansha has completely changed my classroom culture. Students are kinder to each other and excited to earn recognition.&rdquo;
-                </blockquote>
-                <div className="text-center space-y-1">
-                  <p className="font-semibold text-foreground">Jennifer W.</p>
-                  <p className="text-sm text-muted-foreground">2nd Grade Teacher</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Special Ed Teacher */}
-            <Card className="bg-card border-border/50 shadow-lg">
-              <CardContent className="p-8 space-y-4">
-                <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
-                  &ldquo;BeSO&apos;s mindfulness tools help my students self-regulate. The calming exercises have reduced meltdowns significantly.&rdquo;
-                </blockquote>
-                <div className="text-center space-y-1">
-                  <p className="font-semibold text-foreground">Rachel T.</p>
-                  <p className="text-sm text-muted-foreground">Special Education Teacher</p>
+                  <p className="font-semibold text-foreground">CEO</p>
+                  <p className="text-sm text-muted-foreground">Small Business</p>
                 </div>
               </CardContent>
             </Card>
@@ -288,17 +264,17 @@ export default function HomePage() {
       <section className="py-20 px-4 lg:px-8">
         <div className="container mx-auto max-w-4xl text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
-            Ready to Transform Your Classroom?
+            Ready to Supercharge Your Marketing?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Join thousands of educators who trust BeechTree to deliver safe, effective AI-powered learning experiences.
+            Join businesses that trust BeechTree to deliver AI-powered marketing results.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 min-w-[180px]">
               Get Started Today
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <Link href="/demo">
+            <Link href="/contact">
               <Button size="lg" variant="outline" className="min-w-[180px] border-border hover:bg-accent bg-transparent">
                 Schedule a Demo
               </Button>
@@ -316,25 +292,24 @@ export default function HomePage() {
                 <Image src="/images/treelogo2.webp" alt="BeechTree Logo" width={32} height={32} className="w-8 h-8" />
                 <span className="text-xl font-semibold text-foreground">BeechTree</span>
               </div>
-              {/* </CHANGE> */}
-              <p className="text-sm text-muted-foreground">Safe and private AI for K-12 education</p>
+              <p className="text-sm text-muted-foreground">AI-powered marketing solutions</p>
             </div>
             <div>
-              <h3 className="font-semibold text-foreground mb-4">Product</h3>
+              <h3 className="font-semibold text-foreground mb-4">Services</h3>
               <ul className="space-y-2">
                 <li>
                   <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    Features
+                    SEO & Content
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    Pricing
+                    Social Media
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    Security
+                    Paid Ads
                   </a>
                 </li>
               </ul>
@@ -372,16 +347,11 @@ export default function HomePage() {
                     Terms
                   </a>
                 </li>
-                <li>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    Compliance
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
           <div className="pt-8 border-t border-border/40 text-center text-sm text-muted-foreground">
-            © 2026 BeechTree AI. All rights reserved.
+            &copy; 2026 BeechTree LLC. All rights reserved.
           </div>
         </div>
       </footer>

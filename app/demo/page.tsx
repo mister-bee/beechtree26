@@ -5,11 +5,25 @@ import { useState } from "react";
 import { FiCheckCircle } from "react-icons/fi";
 import { BusinessDropdown } from "@/components/ui/business-dropdown";
 
-export default function ContactPage() {
+const softwareOptions = [
+  { value: "", label: "Select a product..." },
+  { value: "kansha", label: "Kansha" },
+  { value: "picture-books", label: "Picture Books" },
+  { value: "writing-universe", label: "Writing Universe" },
+  { value: "reading-adventures", label: "Reading Adventures" },
+  { value: "peace-out", label: "Peace Out" },
+  { value: "classroom-democracy", label: "Classroom Democracy" },
+  { value: "testing-champ", label: "Testing Champ" },
+  { value: "beso", label: "BeSO" },
+  { value: "art-bee", label: "Art Bee" },
+];
+
+export default function RequestDemoPage() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
+    software: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,6 +36,9 @@ export default function ContactPage() {
     setSubmitError(false);
 
     try {
+      const selectedSoftware = softwareOptions.find(
+        (opt) => opt.value === formData.software
+      );
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -30,18 +47,24 @@ export default function ContactPage() {
         body: JSON.stringify({
           name: `${formData.firstName} ${formData.lastName}`,
           email: formData.email,
-          message: formData.message,
+          message: `[Demo Request for: ${selectedSoftware?.label || formData.software}]\n\n${formData.message}`,
         }),
       });
 
       if (response.ok) {
         setSubmitSuccess(true);
-        setFormData({ firstName: "", lastName: "", email: "", message: "" });
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          software: "",
+          message: "",
+        });
       } else {
         setSubmitError(true);
       }
     } catch (error) {
-      console.error("Contact form error:", error);
+      console.error("Demo request form error:", error);
       setSubmitError(true);
     } finally {
       setIsSubmitting(false);
@@ -49,7 +72,9 @@ export default function ContactPage() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     setFormData({
       ...formData,
@@ -77,11 +102,11 @@ export default function ContactPage() {
                   <FiCheckCircle className="w-20 h-20 text-primary" />
                 </div>
                 <h2 className="text-3xl font-bold text-card-foreground mb-4">
-                  Message Sent!
+                  Demo Request Received!
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8">
-                  Thank you for reaching out to BeechTree. We&apos;ll get back
-                  to you as soon as possible.
+                  Thank you for your interest in BeechTree. Our team will reach
+                  out shortly to schedule your personalized demo.
                 </p>
                 <Link
                   href="/"
@@ -119,10 +144,10 @@ export default function ContactPage() {
           <div className="bg-card border border-border/50 rounded-xl shadow-lg p-8 md:p-12">
             <div className="text-center mb-8">
               <h1 className="text-4xl font-bold text-card-foreground mb-2">
-                Contact Us
+                Request a Demo
               </h1>
               <p className="text-muted-foreground">
-                We&apos;d love to hear from you
+                See how BeechTree can transform your classroom
               </p>
             </div>
 
@@ -141,7 +166,6 @@ export default function ContactPage() {
                   value={formData.firstName}
                   onChange={handleChange}
                   required
-                  placeholder="John"
                   className="w-full px-4 py-3 bg-accent/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground placeholder:text-muted-foreground"
                 />
               </div>
@@ -160,7 +184,6 @@ export default function ContactPage() {
                   value={formData.lastName}
                   onChange={handleChange}
                   required
-                  placeholder="Doe"
                   className="w-full px-4 py-3 bg-accent/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground placeholder:text-muted-foreground"
                 />
               </div>
@@ -179,9 +202,35 @@ export default function ContactPage() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="john@example.com"
                   className="w-full px-4 py-3 bg-accent/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground placeholder:text-muted-foreground"
                 />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="software"
+                  className="block text-sm font-medium text-foreground mb-2"
+                >
+                  Product of Interest
+                </label>
+                <select
+                  id="software"
+                  name="software"
+                  value={formData.software}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-accent/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground appearance-none cursor-pointer"
+                >
+                  {softwareOptions.map((option) => (
+                    <option
+                      key={option.value}
+                      value={option.value}
+                      disabled={option.value === ""}
+                    >
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <div>
@@ -189,16 +238,15 @@ export default function ContactPage() {
                   htmlFor="message"
                   className="block text-sm font-medium text-foreground mb-2"
                 >
-                  Message
+                  Additional Information (Optional)
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  required
-                  rows={6}
-                  placeholder="Your message here..."
+                  rows={4}
+                  placeholder="Tell us about your school, grade levels, or specific needs..."
                   className="w-full px-4 py-3 bg-accent/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground placeholder:text-muted-foreground resize-none"
                 />
               </div>
@@ -215,14 +263,14 @@ export default function ContactPage() {
                   disabled={isSubmitting}
                   className="px-8 py-3 bg-primary text-primary-foreground font-medium rounded-lg shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? "Sending..." : "Request Demo"}
                 </button>
               </div>
 
               {submitError && (
                 <div className="mt-4 p-4 bg-destructive/10 border border-destructive/20 rounded-lg text-center">
                   <p className="text-destructive">
-                    Failed to send message. Please try again or email us
+                    Failed to send request. Please try again or email us
                     directly at{" "}
                     <a
                       href="mailto:admin@beechtree.ai"
@@ -237,7 +285,14 @@ export default function ContactPage() {
 
             <div className="mt-8 pt-8 border-t border-border text-center">
               <p className="text-muted-foreground">
-                You can also reach us directly at:{" "}
+                Have questions?{" "}
+                <Link
+                  href="/contact"
+                  className="text-primary hover:text-primary/80 underline transition-colors"
+                >
+                  Contact us
+                </Link>{" "}
+                or email{" "}
                 <a
                   href="mailto:admin@beechtree.ai"
                   className="text-primary hover:text-primary/80 underline transition-colors"

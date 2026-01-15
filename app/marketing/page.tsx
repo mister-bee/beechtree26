@@ -23,7 +23,7 @@ export default function MarketingPage() {
               <a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Testimonials
               </a>
-              <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/marketing/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Contact
               </Link>
               <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
@@ -56,7 +56,7 @@ export default function MarketingPage() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/marketing/contact">
                 <Button
                   size="lg"
                   variant="outline"
@@ -178,7 +178,7 @@ export default function MarketingPage() {
                   <span className="text-foreground">Paid advertising and PPC management</span>
                 </li>
               </ul>
-              <Link href="/contact">
+              <Link href="/marketing/contact">
                 <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
                   Schedule a Consultation
                   <ArrowRight className="ml-2 w-4 h-4" />
@@ -274,7 +274,7 @@ export default function MarketingPage() {
               Get Started Today
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <Link href="/contact">
+            <Link href="/marketing/contact">
               <Button size="lg" variant="outline" className="min-w-[180px] border-border hover:bg-accent bg-transparent">
                 Schedule a Demo
               </Button>
@@ -328,7 +328,7 @@ export default function MarketingPage() {
                   </a>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Link href="/marketing/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     Contact
                   </Link>
                 </li>

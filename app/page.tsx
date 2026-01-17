@@ -363,14 +363,14 @@ export default function HomePage() {
               <h3 className="font-semibold text-foreground mb-4">Legal</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     Privacy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     Terms
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">

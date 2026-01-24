@@ -17,6 +17,7 @@ const businesses = [
     href: "/",
     icon: GraduationCap,
     description: "AI for K-12 classrooms",
+    logo: "/images/treelogo2.webp",
   },
   {
     id: "marketing",
@@ -24,6 +25,7 @@ const businesses = [
     href: "/marketing",
     icon: Megaphone,
     description: "AI marketing solutions",
+    logo: "/images/tree-logo-darkblue.webp",
   },
   {
     id: "property",
@@ -31,6 +33,7 @@ const businesses = [
     href: "/property",
     icon: Building2,
     description: "Smart property solutions",
+    logo: "/images/tree-logo-yellow.webp",
   },
 ];
 
@@ -42,7 +45,7 @@ export function BusinessDropdown({ currentBusiness }: BusinessDropdownProps) {
       <DropdownMenu.Trigger asChild>
         <button className="flex items-center gap-2 outline-none focus:ring-2 focus:ring-gray-300 rounded-lg px-2 py-1 -ml-2 hover:bg-gray-100 transition-colors">
           <Image
-            src="/images/treelogo2.webp"
+            src={current.logo}
             alt="BeechTree Logo"
             width={32}
             height={32}

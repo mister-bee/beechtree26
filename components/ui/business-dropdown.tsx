@@ -42,6 +42,19 @@ export function BusinessDropdown({ currentBusiness }: BusinessDropdownProps) {
 
   return (
     <DropdownMenu.Root>
+      {/* Preload all logos to prevent flicker when switching */}
+      <div className="hidden">
+        {businesses.map((business) => (
+          <Image
+            key={business.id}
+            src={business.logo}
+            alt=""
+            width={32}
+            height={32}
+            priority
+          />
+        ))}
+      </div>
       <DropdownMenu.Trigger asChild>
         <button className="flex items-center gap-2 outline-none focus:ring-2 focus:ring-gray-300 rounded-lg px-2 py-1 -ml-2 hover:bg-gray-100 transition-colors">
           <Image
@@ -50,6 +63,7 @@ export function BusinessDropdown({ currentBusiness }: BusinessDropdownProps) {
             width={32}
             height={32}
             className="w-8 h-8"
+            priority
           />
           <span className="text-xl font-semibold text-foreground">BeechTree</span>
           <ChevronDown className="w-4 h-4 text-gray-500" />

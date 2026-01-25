@@ -318,7 +318,7 @@ export default function PropertyPage() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <Image src="/images/treelogo2.webp" alt="BeechTree Logo" width={32} height={32} className="w-8 h-8" />
+                <Image src="/images/tree-logo-yellow.webp" alt="BeechTree Logo" width={32} height={32} className="w-8 h-8" />
                 <span className="text-xl font-semibold text-foreground">BeechTree</span>
               </div>
               <p className="text-sm text-muted-foreground">Smart property management solutions</p>

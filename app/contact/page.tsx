@@ -238,17 +238,6 @@ export default function ContactPage() {
               )}
             </form>
 
-            <div className="mt-8 pt-8 border-t border-border text-center">
-              <p className="text-muted-foreground">
-                You can also reach us directly at:{" "}
-                <a
-                  href="mailto:admin@beechtree.ai"
-                  className="text-primary hover:text-primary/80 underline transition-colors"
-                >
-                  admin@beechtree.ai
-                </a>
-              </p>
-            </div>
           </div>
         </div>
       </main>

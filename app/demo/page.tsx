@@ -291,14 +291,7 @@ export default function RequestDemoPage() {
                   className="text-primary hover:text-primary/80 underline transition-colors"
                 >
                   Contact us
-                </Link>{" "}
-                or email{" "}
-                <a
-                  href="mailto:admin@beechtree.ai"
-                  className="text-primary hover:text-primary/80 underline transition-colors"
-                >
-                  admin@beechtree.ai
-                </a>
+                </Link>
               </p>
             </div>
           </div>

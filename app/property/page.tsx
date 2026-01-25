@@ -198,8 +198,37 @@ export default function PropertyPage() {
                       <p className="text-sm text-muted-foreground">All your properties at a glance</p>
                     </div>
                   </div>
-                  <div className="h-32 bg-accent/50 rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground">Property Overview Preview</p>
+                  {/* Mock Dashboard */}
+                  <div className="space-y-3">
+                    {/* Property List */}
+                    <div className="flex items-center justify-between p-3 bg-accent/50 rounded-lg">
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 rounded-full bg-green-500" />
+                        <span className="text-sm font-medium text-foreground">142 Oak Street</span>
+                      </div>
+                      <span className="text-xs text-muted-foreground">Occupied</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-accent/50 rounded-lg">
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 rounded-full bg-green-500" />
+                        <span className="text-sm font-medium text-foreground">89 Maple Ave, Unit 3</span>
+                      </div>
+                      <span className="text-xs text-muted-foreground">Occupied</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-accent/50 rounded-lg">
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 rounded-full bg-yellow-500" />
+                        <span className="text-sm font-medium text-foreground">267 Pine Road</span>
+                      </div>
+                      <span className="text-xs text-muted-foreground">Lease ending</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-accent/50 rounded-lg">
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 rounded-full bg-red-500" />
+                        <span className="text-sm font-medium text-foreground">55 Cedar Lane</span>
+                      </div>
+                      <span className="text-xs text-muted-foreground">Vacant</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -227,8 +256,8 @@ export default function PropertyPage() {
                   &ldquo;BeechTree cut our maintenance response time in half. Tenants are happier and so are we.&rdquo;
                 </blockquote>
                 <div className="text-center space-y-1">
-                  <p className="font-semibold text-foreground">Property Manager</p>
-                  <p className="text-sm text-muted-foreground">Multi-family Portfolio</p>
+                  <p className="font-semibold text-foreground">Marcus T.</p>
+                  <p className="text-sm text-muted-foreground">Property Manager, Multi-family Portfolio</p>
                 </div>
               </CardContent>
             </Card>
@@ -239,8 +268,8 @@ export default function PropertyPage() {
                   &ldquo;The automated rent collection feature alone has saved us countless hours every month.&rdquo;
                 </blockquote>
                 <div className="text-center space-y-1">
-                  <p className="font-semibold text-foreground">Landlord</p>
-                  <p className="text-sm text-muted-foreground">Residential Properties</p>
+                  <p className="font-semibold text-foreground">Jennifer R.</p>
+                  <p className="text-sm text-muted-foreground">Landlord, Residential Properties</p>
                 </div>
               </CardContent>
             </Card>
@@ -251,8 +280,8 @@ export default function PropertyPage() {
                   &ldquo;Finally, a property management system that actually understands what we need.&rdquo;
                 </blockquote>
                 <div className="text-center space-y-1">
-                  <p className="font-semibold text-foreground">Real Estate Investor</p>
-                  <p className="text-sm text-muted-foreground">Commercial Properties</p>
+                  <p className="font-semibold text-foreground">David K.</p>
+                  <p className="text-sm text-muted-foreground">Real Estate Investor, Commercial Properties</p>
                 </div>
               </CardContent>
             </Card>

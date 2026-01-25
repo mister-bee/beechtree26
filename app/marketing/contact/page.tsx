@@ -253,17 +253,6 @@ export default function MarketingContactPage() {
               )}
             </form>
 
-            <div className="mt-8 pt-8 border-t border-border text-center">
-              <p className="text-muted-foreground">
-                You can also reach our Marketing team at:{" "}
-                <a
-                  href="mailto:marketing@beechtree.ai"
-                  className="text-primary hover:text-primary/80 underline transition-colors"
-                >
-                  marketing@beechtree.ai
-                </a>
-              </p>
-            </div>
           </div>
         </div>
       </main>

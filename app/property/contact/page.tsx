@@ -254,17 +254,6 @@ export default function PropertyContactPage() {
               )}
             </form>
 
-            <div className="mt-8 pt-8 border-t border-border text-center">
-              <p className="text-muted-foreground">
-                You can also reach our Property Management team at:{" "}
-                <a
-                  href="mailto:property@beechtree.ai"
-                  className="text-primary hover:text-primary/80 underline transition-colors"
-                >
-                  property@beechtree.ai
-                </a>
-              </p>
-            </div>
           </div>
         </div>
       </main>

@@ -285,7 +285,7 @@ export default function HomePage() {
             <Card className="bg-card border-border/50 shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
-                  &ldquo;BeechTree has revolutionized the way our teachers interact with students, enhancing engagement and
+                  &ldquo;BeechTree has transformed the way our teachers interact with students, enhancing engagement and
                   safety in the classroom.&rdquo;
                 </blockquote>
                 <div className="text-center space-y-1">

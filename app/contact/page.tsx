@@ -22,15 +22,17 @@ export default function ContactPage() {
     setSubmitError(false);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://formspree.io/f/xjvqlany", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: `${formData.firstName} ${formData.lastName}`,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
           email: formData.email,
           message: formData.message,
+          _subject: "Contact Form: Education Department",
         }),
       });
 

@@ -1,9 +1,131 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { BarChart3, Target, Zap, CheckCircle2, ArrowRight } from "lucide-react"
+import { BarChart3, Target, Zap, CheckCircle2, ArrowRight, Search, Share2, Mail, DollarSign, TrendingUp, Users, MousePointer, Eye } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { BusinessDropdown } from "@/components/ui/business-dropdown"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+
+// Service modal content data
+const serviceModals = {
+  seo: {
+    icon: Search,
+    title: "SEO Optimization & Content Strategy",
+    description: "Drive organic traffic and establish thought leadership with our AI-powered SEO and content solutions.",
+    features: [
+      {
+        title: "Technical SEO Audit",
+        description: "Comprehensive analysis of site structure, page speed, mobile responsiveness, and crawlability issues."
+      },
+      {
+        title: "Keyword Research & Mapping",
+        description: "AI-driven keyword discovery with search intent analysis and competitor gap identification."
+      },
+      {
+        title: "Content Calendar Planning",
+        description: "Strategic content roadmap aligned with your business goals and seasonal opportunities."
+      },
+      {
+        title: "On-Page Optimization",
+        description: "Meta tags, headers, internal linking, and schema markup implementation for maximum visibility."
+      }
+    ],
+    stats: [
+      { value: "156%", label: "Avg. organic traffic increase" },
+      { value: "Top 10", label: "Rankings achieved" }
+    ]
+  },
+  social: {
+    icon: Share2,
+    title: "Social Media Management & Analytics",
+    description: "Build brand awareness and engage your audience across all major social platforms with data-driven strategies.",
+    features: [
+      {
+        title: "Multi-Platform Management",
+        description: "Unified dashboard for Facebook, Instagram, LinkedIn, Twitter/X, and TikTok content scheduling."
+      },
+      {
+        title: "AI Content Generation",
+        description: "Automated post creation with brand voice consistency and optimal posting time recommendations."
+      },
+      {
+        title: "Community Engagement",
+        description: "Proactive comment management, DM responses, and audience interaction monitoring."
+      },
+      {
+        title: "Performance Analytics",
+        description: "Real-time metrics tracking with custom reports on reach, engagement, and follower growth."
+      }
+    ],
+    stats: [
+      { value: "3.2x", label: "Engagement rate increase" },
+      { value: "45%", label: "Time saved on posting" }
+    ]
+  },
+  email: {
+    icon: Mail,
+    title: "Email Marketing Automation",
+    description: "Nurture leads and retain customers with personalized email campaigns that deliver results.",
+    features: [
+      {
+        title: "Automated Workflows",
+        description: "Welcome series, abandoned cart recovery, re-engagement campaigns, and post-purchase sequences."
+      },
+      {
+        title: "Segmentation & Personalization",
+        description: "AI-powered audience segmentation with dynamic content blocks and personalized recommendations."
+      },
+      {
+        title: "A/B Testing",
+        description: "Subject line, content, and send time optimization through continuous multivariate testing."
+      },
+      {
+        title: "Deliverability Management",
+        description: "List hygiene, authentication setup, and inbox placement monitoring to maximize reach."
+      }
+    ],
+    stats: [
+      { value: "42%", label: "Avg. open rate achieved" },
+      { value: "8x", label: "ROI on email campaigns" }
+    ]
+  },
+  ppc: {
+    icon: DollarSign,
+    title: "Paid Advertising & PPC Management",
+    description: "Maximize your ad spend with AI-optimized campaigns across Google, Meta, and programmatic networks.",
+    features: [
+      {
+        title: "Campaign Strategy",
+        description: "Full-funnel campaign architecture from awareness to conversion with budget allocation optimization."
+      },
+      {
+        title: "Creative Development",
+        description: "Ad copy, display banners, and video assets with AI-powered creative testing and iteration."
+      },
+      {
+        title: "Bid Management",
+        description: "Real-time bid optimization using machine learning to maximize ROAS and minimize CPA."
+      },
+      {
+        title: "Attribution & Reporting",
+        description: "Cross-channel attribution modeling with transparent reporting on spend and performance metrics."
+      }
+    ],
+    stats: [
+      { value: "2.8x", label: "Avg. ROAS improvement" },
+      { value: "-35%", label: "Cost per acquisition" }
+    ]
+  }
+}
 
 export default function MarketingPage() {
   return (
@@ -161,22 +283,201 @@ export default function MarketingPage() {
                 artificial intelligence.
               </p>
               <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">SEO optimization and content strategy</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Social media management and analytics</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Email marketing automation</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Paid advertising and PPC management</span>
-                </li>
+                {/* SEO Service Modal */}
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <li className="flex items-start gap-3 cursor-pointer group hover:bg-accent/50 -mx-3 px-3 py-2 rounded-lg transition-colors">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-foreground group-hover:text-primary transition-colors">SEO optimization and content strategy</span>
+                      <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity ml-auto mt-0.5" />
+                    </li>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                    <DialogHeader>
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                          <Search className="w-5 h-5 text-primary" />
+                        </div>
+                        <DialogTitle className="text-xl">{serviceModals.seo.title}</DialogTitle>
+                      </div>
+                      <DialogDescription className="text-base">
+                        {serviceModals.seo.description}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="space-y-6 mt-4">
+                      <div className="grid grid-cols-2 gap-4">
+                        {serviceModals.seo.stats.map((stat, idx) => (
+                          <div key={idx} className="bg-primary/5 rounded-lg p-4 text-center">
+                            <p className="text-2xl font-bold text-primary">{stat.value}</p>
+                            <p className="text-sm text-muted-foreground">{stat.label}</p>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="space-y-4">
+                        <h4 className="font-semibold text-foreground">What&apos;s Included</h4>
+                        {serviceModals.seo.features.map((feature, idx) => (
+                          <div key={idx} className="border-l-2 border-primary/30 pl-4">
+                            <p className="font-medium text-foreground">{feature.title}</p>
+                            <p className="text-sm text-muted-foreground">{feature.description}</p>
+                          </div>
+                        ))}
+                      </div>
+                      <Link href="/marketing/contact">
+                        <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                          Get Started with SEO
+                          <ArrowRight className="ml-2 w-4 h-4" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+
+                {/* Social Media Service Modal */}
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <li className="flex items-start gap-3 cursor-pointer group hover:bg-accent/50 -mx-3 px-3 py-2 rounded-lg transition-colors">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-foreground group-hover:text-primary transition-colors">Social media management and analytics</span>
+                      <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity ml-auto mt-0.5" />
+                    </li>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                    <DialogHeader>
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                          <Share2 className="w-5 h-5 text-primary" />
+                        </div>
+                        <DialogTitle className="text-xl">{serviceModals.social.title}</DialogTitle>
+                      </div>
+                      <DialogDescription className="text-base">
+                        {serviceModals.social.description}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="space-y-6 mt-4">
+                      <div className="grid grid-cols-2 gap-4">
+                        {serviceModals.social.stats.map((stat, idx) => (
+                          <div key={idx} className="bg-primary/5 rounded-lg p-4 text-center">
+                            <p className="text-2xl font-bold text-primary">{stat.value}</p>
+                            <p className="text-sm text-muted-foreground">{stat.label}</p>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="space-y-4">
+                        <h4 className="font-semibold text-foreground">What&apos;s Included</h4>
+                        {serviceModals.social.features.map((feature, idx) => (
+                          <div key={idx} className="border-l-2 border-primary/30 pl-4">
+                            <p className="font-medium text-foreground">{feature.title}</p>
+                            <p className="text-sm text-muted-foreground">{feature.description}</p>
+                          </div>
+                        ))}
+                      </div>
+                      <Link href="/marketing/contact">
+                        <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                          Get Started with Social Media
+                          <ArrowRight className="ml-2 w-4 h-4" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+
+                {/* Email Marketing Service Modal */}
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <li className="flex items-start gap-3 cursor-pointer group hover:bg-accent/50 -mx-3 px-3 py-2 rounded-lg transition-colors">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-foreground group-hover:text-primary transition-colors">Email marketing automation</span>
+                      <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity ml-auto mt-0.5" />
+                    </li>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                    <DialogHeader>
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                          <Mail className="w-5 h-5 text-primary" />
+                        </div>
+                        <DialogTitle className="text-xl">{serviceModals.email.title}</DialogTitle>
+                      </div>
+                      <DialogDescription className="text-base">
+                        {serviceModals.email.description}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="space-y-6 mt-4">
+                      <div className="grid grid-cols-2 gap-4">
+                        {serviceModals.email.stats.map((stat, idx) => (
+                          <div key={idx} className="bg-primary/5 rounded-lg p-4 text-center">
+                            <p className="text-2xl font-bold text-primary">{stat.value}</p>
+                            <p className="text-sm text-muted-foreground">{stat.label}</p>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="space-y-4">
+                        <h4 className="font-semibold text-foreground">What&apos;s Included</h4>
+                        {serviceModals.email.features.map((feature, idx) => (
+                          <div key={idx} className="border-l-2 border-primary/30 pl-4">
+                            <p className="font-medium text-foreground">{feature.title}</p>
+                            <p className="text-sm text-muted-foreground">{feature.description}</p>
+                          </div>
+                        ))}
+                      </div>
+                      <Link href="/marketing/contact">
+                        <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                          Get Started with Email Marketing
+                          <ArrowRight className="ml-2 w-4 h-4" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+
+                {/* PPC Service Modal */}
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <li className="flex items-start gap-3 cursor-pointer group hover:bg-accent/50 -mx-3 px-3 py-2 rounded-lg transition-colors">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-foreground group-hover:text-primary transition-colors">Paid advertising and PPC management</span>
+                      <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity ml-auto mt-0.5" />
+                    </li>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                    <DialogHeader>
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                          <DollarSign className="w-5 h-5 text-primary" />
+                        </div>
+                        <DialogTitle className="text-xl">{serviceModals.ppc.title}</DialogTitle>
+                      </div>
+                      <DialogDescription className="text-base">
+                        {serviceModals.ppc.description}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="space-y-6 mt-4">
+                      <div className="grid grid-cols-2 gap-4">
+                        {serviceModals.ppc.stats.map((stat, idx) => (
+                          <div key={idx} className="bg-primary/5 rounded-lg p-4 text-center">
+                            <p className="text-2xl font-bold text-primary">{stat.value}</p>
+                            <p className="text-sm text-muted-foreground">{stat.label}</p>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="space-y-4">
+                        <h4 className="font-semibold text-foreground">What&apos;s Included</h4>
+                        {serviceModals.ppc.features.map((feature, idx) => (
+                          <div key={idx} className="border-l-2 border-primary/30 pl-4">
+                            <p className="font-medium text-foreground">{feature.title}</p>
+                            <p className="text-sm text-muted-foreground">{feature.description}</p>
+                          </div>
+                        ))}
+                      </div>
+                      <Link href="/marketing/contact">
+                        <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                          Get Started with PPC
+                          <ArrowRight className="ml-2 w-4 h-4" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </ul>
               <Link href="/marketing/contact">
                 <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
@@ -187,8 +488,8 @@ export default function MarketingPage() {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full" />
-              <div className="relative z-10 bg-card border border-border/50 rounded-xl shadow-2xl p-8">
-                <div className="space-y-6">
+              <div className="relative z-10 bg-card border border-border/50 rounded-xl shadow-2xl p-6">
+                <div className="space-y-5">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
                       <BarChart3 className="w-6 h-6 text-primary" />
@@ -198,8 +499,72 @@ export default function MarketingPage() {
                       <p className="text-sm text-muted-foreground">Real-time performance tracking</p>
                     </div>
                   </div>
-                  <div className="h-32 bg-accent/50 rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground">Analytics Dashboard Preview</p>
+
+                  {/* Analytics Dashboard Mockup */}
+                  <div className="bg-accent/30 rounded-lg p-4 space-y-4">
+                    {/* Mini chart bars */}
+                    <div className="flex items-end gap-2 h-20 px-2">
+                      <div className="flex-1 bg-primary/20 rounded-t" style={{ height: '45%' }} />
+                      <div className="flex-1 bg-primary/30 rounded-t" style={{ height: '65%' }} />
+                      <div className="flex-1 bg-primary/40 rounded-t" style={{ height: '55%' }} />
+                      <div className="flex-1 bg-primary/50 rounded-t" style={{ height: '80%' }} />
+                      <div className="flex-1 bg-primary/60 rounded-t" style={{ height: '70%' }} />
+                      <div className="flex-1 bg-primary/70 rounded-t" style={{ height: '90%' }} />
+                      <div className="flex-1 bg-primary rounded-t" style={{ height: '100%' }} />
+                    </div>
+
+                    {/* Stats row */}
+                    <div className="grid grid-cols-3 gap-3">
+                      <div className="bg-card rounded-lg p-3 text-center">
+                        <div className="flex items-center justify-center gap-1 text-green-500 text-xs mb-1">
+                          <TrendingUp className="w-3 h-3" />
+                          <span>+24%</span>
+                        </div>
+                        <p className="text-lg font-bold text-foreground">12.4K</p>
+                        <p className="text-xs text-muted-foreground">Visitors</p>
+                      </div>
+                      <div className="bg-card rounded-lg p-3 text-center">
+                        <div className="flex items-center justify-center gap-1 text-green-500 text-xs mb-1">
+                          <TrendingUp className="w-3 h-3" />
+                          <span>+18%</span>
+                        </div>
+                        <p className="text-lg font-bold text-foreground">3.2%</p>
+                        <p className="text-xs text-muted-foreground">Conv. Rate</p>
+                      </div>
+                      <div className="bg-card rounded-lg p-3 text-center">
+                        <div className="flex items-center justify-center gap-1 text-green-500 text-xs mb-1">
+                          <TrendingUp className="w-3 h-3" />
+                          <span>+32%</span>
+                        </div>
+                        <p className="text-lg font-bold text-foreground">$8.2K</p>
+                        <p className="text-xs text-muted-foreground">Revenue</p>
+                      </div>
+                    </div>
+
+                    {/* Campaign metrics */}
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between text-sm">
+                        <div className="flex items-center gap-2">
+                          <Eye className="w-4 h-4 text-muted-foreground" />
+                          <span className="text-muted-foreground">Impressions</span>
+                        </div>
+                        <span className="font-medium text-foreground">245,892</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm">
+                        <div className="flex items-center gap-2">
+                          <MousePointer className="w-4 h-4 text-muted-foreground" />
+                          <span className="text-muted-foreground">Clicks</span>
+                        </div>
+                        <span className="font-medium text-foreground">8,742</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm">
+                        <div className="flex items-center gap-2">
+                          <Users className="w-4 h-4 text-muted-foreground" />
+                          <span className="text-muted-foreground">New Leads</span>
+                        </div>
+                        <span className="font-medium text-foreground">312</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -39,15 +39,18 @@ export default function RequestDemoPage() {
       const selectedSoftware = softwareOptions.find(
         (opt) => opt.value === formData.software
       );
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://formspree.io/f/xjvqlany", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: `${formData.firstName} ${formData.lastName}`,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
           email: formData.email,
-          message: `[Demo Request for: ${selectedSoftware?.label || formData.software}]\n\n${formData.message}`,
+          software: selectedSoftware?.label || formData.software,
+          message: formData.message || "No additional message provided",
+          _subject: `Demo Request: ${selectedSoftware?.label || formData.software}`,
         }),
       });
 

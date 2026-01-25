@@ -23,15 +23,18 @@ export default function PropertyContactPage() {
     setSubmitError(false);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://formspree.io/f/xjvqlany", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: `${formData.firstName} ${formData.lastName}`,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
           email: formData.email,
-          message: `[Property Management Department Inquiry]\nNumber of Properties: ${formData.propertyCount || "Not specified"}\n\n${formData.message}`,
+          propertyCount: formData.propertyCount || "Not specified",
+          message: formData.message,
+          _subject: "Contact Form: Property Management Department",
         }),
       });
 

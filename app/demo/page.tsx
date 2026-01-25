@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { FiCheckCircle } from "react-icons/fi";
 import { BusinessDropdown } from "@/components/ui/business-dropdown";
@@ -20,6 +20,36 @@ const softwareOptions = [
 ];
 
 export default function RequestDemoPage() {
+  return (
+    <Suspense fallback={<DemoPageSkeleton />}>
+      <RequestDemoContent />
+    </Suspense>
+  );
+}
+
+function DemoPageSkeleton() {
+  return (
+    <div className="min-h-screen bg-background theme-green">
+      <nav className="border-b border-border/40 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 bg-background/95">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <BusinessDropdown currentBusiness="education" />
+          </div>
+        </div>
+      </nav>
+      <main className="pt-24 pb-16 px-4 lg:px-8">
+        <div className="container mx-auto max-w-2xl">
+          <div className="bg-card border border-border/50 rounded-xl shadow-lg p-8 md:p-12 animate-pulse">
+            <div className="h-8 bg-accent rounded w-1/2 mx-auto mb-4" />
+            <div className="h-4 bg-accent rounded w-1/3 mx-auto" />
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}
+
+function RequestDemoContent() {
   const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     firstName: "",

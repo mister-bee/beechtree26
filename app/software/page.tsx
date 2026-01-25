@@ -36,7 +36,7 @@ export default function SoftwarePage() {
       tagline: "Gratitude based classroom management",
       icon: <FaHandPaper />,
       description:
-        "Kansha revolutionizes classroom management by focusing on positive reinforcement and gratitude. This innovative platform helps teachers track and reward good behavior, fostering a supportive learning environment. Features include digital reward systems, behavior tracking analytics, and parent communication tools.",
+        "Kansha revolutionizes classroom management by focusing on positive reinforcement and gratitude. This innovative platform helps teachers track and reward good behavior, fostering a supportive learning environment. Features include a schoolwide token system, digital stores where students can redeem rewards, exciting raffles, and group collaboration tools. Kansha also serves as your privacy-first portal to access all other BeechTree products in one secure place.",
     },
     {
       title: "Picture Books",

@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { FiCheckCircle } from "react-icons/fi";
 import { BusinessDropdown } from "@/components/ui/business-dropdown";
 
@@ -19,6 +20,7 @@ const softwareOptions = [
 ];
 
 export default function RequestDemoPage() {
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -29,6 +31,17 @@ export default function RequestDemoPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState(false);
+
+  // Preselect product from URL parameter
+  useEffect(() => {
+    const product = searchParams.get("product");
+    if (product) {
+      const validOption = softwareOptions.find((opt) => opt.value === product);
+      if (validOption) {
+        setFormData((prev) => ({ ...prev, software: product }));
+      }
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

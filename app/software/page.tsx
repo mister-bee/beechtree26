@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { BusinessDropdown } from "@/components/ui/business-dropdown";
 import {
   FaHandPaper,
@@ -16,12 +17,14 @@ import {
 
 interface SoftwareProduct {
   title: string;
+  slug: string;
   tagline: string;
   icon: React.ReactNode;
   description: string;
 }
 
 export default function SoftwarePage() {
+  const router = useRouter();
   const currentYear = new Date().getFullYear();
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<SoftwareProduct | null>(null);
@@ -29,6 +32,7 @@ export default function SoftwarePage() {
   const softwareProducts: SoftwareProduct[] = [
     {
       title: "Kansha",
+      slug: "kansha",
       tagline: "Gratitude based classroom management",
       icon: <FaHandPaper />,
       description:
@@ -36,6 +40,7 @@ export default function SoftwarePage() {
     },
     {
       title: "Picture Books",
+      slug: "picture-books",
       tagline: "Amazing AI stories for kids",
       icon: <FaChild />,
       description:
@@ -43,6 +48,7 @@ export default function SoftwarePage() {
     },
     {
       title: "Writing Universe",
+      slug: "writing-universe",
       tagline: "Using AI to curate creative writing",
       icon: <FaPencilAlt />,
       description:
@@ -50,6 +56,7 @@ export default function SoftwarePage() {
     },
     {
       title: "Reading Adventures",
+      slug: "reading-adventures",
       tagline:
         "Using AI to build up phonics and fluency and students according to level",
       icon: <FaBook />,
@@ -58,6 +65,7 @@ export default function SoftwarePage() {
     },
     {
       title: "Peace Out",
+      slug: "peace-out",
       tagline: "Using an AI facilitator to arrive at conflict resolutions",
       icon: <FaHandshake />,
       description:
@@ -65,6 +73,7 @@ export default function SoftwarePage() {
     },
     {
       title: "Classroom Democracy",
+      slug: "classroom-democracy",
       tagline: "Classroom management based on the US government",
       icon: <FaUniversity />,
       description:
@@ -72,6 +81,7 @@ export default function SoftwarePage() {
     },
     {
       title: "Testing Champ",
+      slug: "testing-champ",
       tagline: "Using AI to hone in on test skills",
       icon: <FaFileAlt />,
       description:
@@ -79,6 +89,7 @@ export default function SoftwarePage() {
     },
     {
       title: "BeSO",
+      slug: "beso",
       tagline:
         "Breathing, stretching, observing: Using yoga and meditation in the classroom",
       icon: <FaHeart />,
@@ -87,6 +98,7 @@ export default function SoftwarePage() {
     },
     {
       title: "Art Bee",
+      slug: "art-bee",
       tagline: "AI-powered creative arts and visual learning platform",
       icon: <FaPalette />,
       description:
@@ -194,7 +206,7 @@ export default function SoftwarePage() {
               </button>
               <button
                 className="px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-                onClick={handleCloseModal}
+                onClick={() => router.push(`/demo?product=${selectedProduct.slug}`)}
               >
                 Learn More
               </button>

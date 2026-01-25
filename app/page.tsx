@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { BusinessDropdown } from "@/components/ui/business-dropdown"
-import { Shield, Users, Lock, CheckCircle2, ArrowRight } from "lucide-react"
+import { Shield, Users, Lock, CheckCircle2, ArrowRight, ShieldCheck, EyeOff, Database, Server, KeyRound } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -179,11 +179,90 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full" />
-              <img
-                src="/teacher-dashboard-interface-education-technology.jpg"
-                alt="BeechTree platform interface"
-                className="w-full h-auto rounded-xl shadow-2xl border border-border/50 relative z-10"
-              />
+              <div className="relative z-10 bg-card border border-border/50 rounded-xl shadow-2xl p-6">
+                <div className="space-y-5">
+                  {/* Header */}
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                      <ShieldCheck className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground">Privacy Dashboard</p>
+                      <p className="text-sm text-muted-foreground">Student data protection status</p>
+                    </div>
+                  </div>
+
+                  {/* Privacy Status Card */}
+                  <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-3 h-3 rounded-full bg-primary animate-pulse" />
+                      <span className="font-medium text-foreground">All Systems Protected</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-3 text-center">
+                      <div className="bg-card rounded-lg p-3">
+                        <p className="text-2xl font-bold text-primary">100%</p>
+                        <p className="text-xs text-muted-foreground">Data Encrypted</p>
+                      </div>
+                      <div className="bg-card rounded-lg p-3">
+                        <p className="text-2xl font-bold text-primary">0</p>
+                        <p className="text-xs text-muted-foreground">Data Shared</p>
+                      </div>
+                      <div className="bg-card rounded-lg p-3">
+                        <p className="text-2xl font-bold text-primary">24/7</p>
+                        <p className="text-xs text-muted-foreground">Monitoring</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Privacy Features */}
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between p-3 bg-accent/50 rounded-lg">
+                      <div className="flex items-center gap-3">
+                        <EyeOff className="w-4 h-4 text-primary" />
+                        <span className="text-sm font-medium text-foreground">No Third-Party Tracking</span>
+                      </div>
+                      <CheckCircle2 className="w-4 h-4 text-primary" />
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-accent/50 rounded-lg">
+                      <div className="flex items-center gap-3">
+                        <Database className="w-4 h-4 text-primary" />
+                        <span className="text-sm font-medium text-foreground">On-Premise Data Storage</span>
+                      </div>
+                      <CheckCircle2 className="w-4 h-4 text-primary" />
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-accent/50 rounded-lg">
+                      <div className="flex items-center gap-3">
+                        <KeyRound className="w-4 h-4 text-primary" />
+                        <span className="text-sm font-medium text-foreground">End-to-End Encryption</span>
+                      </div>
+                      <CheckCircle2 className="w-4 h-4 text-primary" />
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-accent/50 rounded-lg">
+                      <div className="flex items-center gap-3">
+                        <Server className="w-4 h-4 text-primary" />
+                        <span className="text-sm font-medium text-foreground">FERPA & COPPA Compliant</span>
+                      </div>
+                      <CheckCircle2 className="w-4 h-4 text-primary" />
+                    </div>
+                  </div>
+
+                  {/* Compliance Badges */}
+                  <div className="flex items-center justify-center gap-4 pt-2">
+                    <div className="flex items-center gap-1.5 px-3 py-1.5 bg-accent rounded-full">
+                      <Shield className="w-3.5 h-3.5 text-primary" />
+                      <span className="text-xs font-medium text-foreground">FERPA</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 px-3 py-1.5 bg-accent rounded-full">
+                      <Shield className="w-3.5 h-3.5 text-primary" />
+                      <span className="text-xs font-medium text-foreground">COPPA</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 px-3 py-1.5 bg-accent rounded-full">
+                      <Shield className="w-3.5 h-3.5 text-primary" />
+                      <span className="text-xs font-medium text-foreground">SOC 2</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

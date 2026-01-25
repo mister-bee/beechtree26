@@ -246,10 +246,10 @@ export default function MarketingContactPage() {
                     Failed to send message. Please try again or email us
                     directly at{" "}
                     <a
-                      href="mailto:marketing@beechtree.ai"
+                      href="mailto:admin@beechtree.ai"
                       className="underline hover:no-underline"
                     >
-                      marketing@beechtree.ai
+                      admin@beechtree.ai
                     </a>
                   </p>
                 </div>

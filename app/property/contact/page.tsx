@@ -247,10 +247,10 @@ export default function PropertyContactPage() {
                     Failed to send message. Please try again or email us
                     directly at{" "}
                     <a
-                      href="mailto:property@beechtree.ai"
+                      href="mailto:admin@beechtree.ai"
                       className="underline hover:no-underline"
                     >
-                      property@beechtree.ai
+                      admin@beechtree.ai
                     </a>
                   </p>
                 </div>

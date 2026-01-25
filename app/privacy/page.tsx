@@ -110,7 +110,7 @@ export default function PrivacyPage() {
               </p>
               <div className="mt-4 p-4 bg-accent/30 rounded-lg">
                 <p className="text-foreground font-medium">BeechTree LLC</p>
-                <p className="text-muted-foreground">Email: privacy@beechtree.ai</p>
+                <p className="text-muted-foreground">Email: admin@beechtree.ai</p>
               </div>
             </section>
           </div>

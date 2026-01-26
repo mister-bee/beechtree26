@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { BarChart3, Target, Zap, CheckCircle2, ArrowRight, Search, Share2, Mail, DollarSign, TrendingUp, Users, MousePointer, Eye } from "lucide-react"
+import { BarChart3, Zap, CheckCircle2, ArrowRight, Search, TrendingUp, Clock, Bot, Globe, Target, Share2, Mail, DollarSign, Eye, MousePointer, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { BusinessDropdown } from "@/components/ui/business-dropdown"
@@ -17,112 +17,166 @@ import {
 
 // Service modal content data
 const serviceModals = {
-  seo: {
-    icon: Search,
-    title: "SEO Optimization & Content Strategy",
-    description: "Drive organic traffic and establish thought leadership with our comprehensive SEO and content solutions.",
+  automation: {
+    icon: Zap,
+    title: "Marketing Automation That Never Stops",
+    description: "Comprehensive automation across content, social, email, and engagement that works around the clock.",
     features: [
       {
-        title: "Technical SEO Audit",
-        description: "Comprehensive analysis of site structure, page speed, mobile responsiveness, and crawlability issues."
+        title: "Content Generation",
+        description: "Blog posts, social updates, and email copy created on autopilot while maintaining your brand voice."
       },
       {
-        title: "Keyword Research & Mapping",
-        description: "Intelligent keyword discovery with search intent analysis and competitor gap identification."
+        title: "Social Media Automation",
+        description: "Intelligent scheduling, posting, and responding to engagement across all platforms automatically."
       },
       {
-        title: "Content Calendar Planning",
-        description: "Strategic content roadmap aligned with your business goals and seasonal opportunities."
+        title: "Email Sequences",
+        description: "Automated nurture campaigns, follow-ups, and personalized outreach that runs continuously."
       },
       {
-        title: "On-Page Optimization",
-        description: "Meta tags, headers, internal linking, and schema markup implementation for maximum visibility."
+        title: "Performance Monitoring",
+        description: "Continuous optimization based on what's working, adjusting strategies in real-time."
       }
     ],
     stats: [
-      { value: "156%", label: "Avg. organic traffic increase" },
-      { value: "Top 10", label: "Rankings achieved" }
+      { value: "80%", label: "Time saved on marketing" },
+      { value: "24/7", label: "Always active" }
+    ]
+  },
+  aiSeo: {
+    icon: Globe,
+    title: "SEO for How People Search Now",
+    description: "Optimize for AI search, answer engines, and AI-generated summaries where discovery is moving.",
+    features: [
+      {
+        title: "Answer Engine Optimization",
+        description: "Content structured for AI comprehension so your business appears in AI-generated answers."
+      },
+      {
+        title: "LLM Citation Strategy",
+        description: "Strategic positioning to be mentioned and recommended in AI assistant responses."
+      },
+      {
+        title: "AI Overview Optimization",
+        description: "Appearing prominently in AI-generated search summaries and featured snippets."
+      },
+      {
+        title: "Semantic Content Architecture",
+        description: "Information structured so AI systems can understand, extract, and recommend your content."
+      }
+    ],
+    stats: [
+      { value: "3x", label: "AI search visibility" },
+      { value: "Top", label: "Answer engine results" }
+    ]
+  },
+  seo: {
+    icon: Search,
+    title: "SEO Optimization & Content Strategy",
+    description: "Comprehensive search engine optimization to increase your visibility and drive organic traffic.",
+    features: [
+      {
+        title: "Keyword Research & Strategy",
+        description: "In-depth analysis to identify high-value keywords that align with your business goals."
+      },
+      {
+        title: "On-Page Optimization",
+        description: "Technical and content optimizations to improve search rankings and user experience."
+      },
+      {
+        title: "Content Strategy",
+        description: "Data-driven content planning that attracts, engages, and converts your target audience."
+      },
+      {
+        title: "Performance Tracking",
+        description: "Detailed analytics and reporting to measure SEO success and identify opportunities."
+      }
+    ],
+    stats: [
+      { value: "150%", label: "Avg. traffic increase" },
+      { value: "Top 10", label: "Keyword rankings" }
     ]
   },
   social: {
     icon: Share2,
     title: "Social Media Management & Analytics",
-    description: "Build brand awareness and engage your audience across all major social platforms with data-driven strategies.",
+    description: "Build your brand presence and engage your audience across all major social platforms.",
     features: [
       {
-        title: "Multi-Platform Management",
-        description: "Unified dashboard for Facebook, Instagram, LinkedIn, Twitter/X, and TikTok content scheduling."
+        title: "Content Creation",
+        description: "Engaging posts, stories, and visuals tailored to each platform and your brand voice."
       },
       {
-        title: "Smart Content Generation",
-        description: "Automated post creation with brand voice consistency and optimal posting time recommendations."
+        title: "Community Management",
+        description: "Active engagement with your audience to build relationships and brand loyalty."
       },
       {
-        title: "Community Engagement",
-        description: "Proactive comment management, DM responses, and audience interaction monitoring."
+        title: "Platform Strategy",
+        description: "Customized approaches for each social network to maximize reach and engagement."
       },
       {
-        title: "Performance Analytics",
-        description: "Real-time metrics tracking with custom reports on reach, engagement, and follower growth."
+        title: "Analytics & Insights",
+        description: "Comprehensive reporting on performance metrics and audience behavior."
       }
     ],
     stats: [
-      { value: "3.2x", label: "Engagement rate increase" },
-      { value: "45%", label: "Time saved on posting" }
+      { value: "3x", label: "Engagement increase" },
+      { value: "50K+", label: "Avg. reach growth" }
     ]
   },
   email: {
     icon: Mail,
     title: "Email Marketing Automation",
-    description: "Nurture leads and retain customers with personalized email campaigns that deliver results.",
+    description: "Nurture leads and drive conversions with intelligent, automated email campaigns.",
     features: [
       {
-        title: "Automated Workflows",
-        description: "Welcome series, abandoned cart recovery, re-engagement campaigns, and post-purchase sequences."
+        title: "Campaign Design",
+        description: "Beautiful, responsive email templates that reflect your brand and drive action."
+      },
+      {
+        title: "Automation Workflows",
+        description: "Triggered sequences that deliver the right message at the right time automatically."
       },
       {
         title: "Segmentation & Personalization",
-        description: "Advanced audience segmentation with dynamic content blocks and personalized recommendations."
+        description: "Targeted messaging based on behavior, preferences, and customer journey stage."
       },
       {
-        title: "A/B Testing",
-        description: "Subject line, content, and send time optimization through continuous multivariate testing."
-      },
-      {
-        title: "Deliverability Management",
-        description: "List hygiene, authentication setup, and inbox placement monitoring to maximize reach."
+        title: "A/B Testing & Optimization",
+        description: "Continuous testing to improve open rates, click-through rates, and conversions."
       }
     ],
     stats: [
-      { value: "42%", label: "Avg. open rate achieved" },
-      { value: "8x", label: "ROI on email campaigns" }
+      { value: "45%", label: "Avg. open rate" },
+      { value: "4x", label: "ROI improvement" }
     ]
   },
   ppc: {
     icon: DollarSign,
     title: "Paid Advertising & PPC Management",
-    description: "Maximize your ad spend with optimized campaigns across Google, Meta, and programmatic networks.",
+    description: "Maximize your ad spend with data-driven campaigns across Google, Meta, and more.",
     features: [
       {
         title: "Campaign Strategy",
-        description: "Full-funnel campaign architecture from awareness to conversion with budget allocation optimization."
+        description: "Custom advertising strategies aligned with your goals, budget, and target audience."
       },
       {
-        title: "Creative Development",
-        description: "Ad copy, display banners, and video assets with automated creative testing and iteration."
+        title: "Ad Creative & Copy",
+        description: "Compelling ads that capture attention and drive clicks across all platforms."
       },
       {
         title: "Bid Management",
-        description: "Real-time bid optimization using machine learning to maximize ROAS and minimize CPA."
+        description: "Intelligent bid optimization to maximize conversions while minimizing cost per acquisition."
       },
       {
-        title: "Attribution & Reporting",
-        description: "Cross-channel attribution modeling with transparent reporting on spend and performance metrics."
+        title: "Conversion Tracking",
+        description: "Full-funnel tracking to measure true ROI and optimize for business outcomes."
       }
     ],
     stats: [
-      { value: "2.8x", label: "Avg. ROAS improvement" },
-      { value: "-35%", label: "Cost per acquisition" }
+      { value: "35%", label: "Lower CPA" },
+      { value: "2.5x", label: "ROAS improvement" }
     ]
   }
 }
@@ -159,14 +213,13 @@ export default function MarketingPage() {
           <div className="text-center space-y-6 max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              AI-Powered Marketing
+              Autonomous Marketing
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground text-balance">
-              Grow Your Business Smarter
+              Marketing That Works While You Sleep
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-              BeechTree Marketing leverages data-driven strategies to create campaigns that deliver real results
-              for your business.
+              Automated marketing systems that run 24/7, plus SEO strategies built for how people actually search now—through AI assistants and answer engines.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <Link href="#services">
@@ -192,16 +245,16 @@ export default function MarketingPage() {
             <div className="relative z-10 bg-card border border-border/50 rounded-xl shadow-2xl p-8 md:p-12">
               <div className="grid md:grid-cols-3 gap-8 text-center">
                 <div>
+                  <p className="text-4xl font-bold text-primary">24/7</p>
+                  <p className="text-muted-foreground mt-2">Always-on automation</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-bold text-primary">80%</p>
+                  <p className="text-muted-foreground mt-2">Marketing time saved</p>
+                </div>
+                <div>
                   <p className="text-4xl font-bold text-primary">3x</p>
-                  <p className="text-muted-foreground mt-2">Average ROI increase</p>
-                </div>
-                <div>
-                  <p className="text-4xl font-bold text-primary">50%</p>
-                  <p className="text-muted-foreground mt-2">Time saved on campaigns</p>
-                </div>
-                <div>
-                  <p className="text-4xl font-bold text-primary">10k+</p>
-                  <p className="text-muted-foreground mt-2">Campaigns optimized</p>
+                  <p className="text-muted-foreground mt-2">AI search visibility</p>
                 </div>
               </div>
             </div>

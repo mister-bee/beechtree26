@@ -41,24 +41,23 @@ export default function SoftwarePage() {
     {
       title: "Picture Books",
       slug: "picture-books",
-      tagline: "Amazing AI stories for kids",
+      tagline: "Personalized stories for young readers",
       icon: <FaChild />,
       description:
-        "Create personalized picture books using advanced AI technology. Teachers and students can generate unique stories tailored to specific learning objectives, reading levels, and interests. Includes a vast library of AI-generated illustrations and customizable narrative templates.",
+        "Create personalized picture books with unique stories tailored to specific learning objectives, reading levels, and interests. Includes a vast library of illustrations and customizable narrative templates.",
     },
     {
       title: "Writing Universe",
       slug: "writing-universe",
-      tagline: "Using AI to curate creative writing",
+      tagline: "Interactive creative writing platform",
       icon: <FaPencilAlt />,
       description:
-        "An interactive platform that guides students through the creative writing process. Features AI-powered writing prompts, story structure assistance, and real-time feedback on grammar and style. Includes collaborative writing tools and portfolio management.",
+        "An interactive platform that guides students through the creative writing process. Features smart writing prompts, story structure assistance, and real-time feedback on grammar and style. Includes collaborative writing tools and portfolio management.",
     },
     {
       title: "Reading Adventures",
       slug: "reading-adventures",
-      tagline:
-        "Using AI to build up phonics and fluency and students according to level",
+      tagline: "Adaptive phonics and fluency for every reading level",
       icon: <FaBook />,
       description:
         "Adaptive reading platform that automatically adjusts to each student's reading level. Incorporates interactive phonics exercises, comprehension activities, and progress tracking. Features voice recognition for reading practice and immediate feedback.",
@@ -66,10 +65,10 @@ export default function SoftwarePage() {
     {
       title: "Peace Out",
       slug: "peace-out",
-      tagline: "Using an AI facilitator to arrive at conflict resolutions",
+      tagline: "Guided conflict resolution for students",
       icon: <FaHandshake />,
       description:
-        "An AI-powered conflict resolution tool that helps students and teachers navigate disagreements constructively. Provides guided meditation exercises, conflict resolution strategies, and documentation of agreements reached.",
+        "A conflict resolution tool that helps students and teachers navigate disagreements constructively. Provides guided meditation exercises, conflict resolution strategies, and documentation of agreements reached.",
     },
     {
       title: "Classroom Democracy",
@@ -82,7 +81,7 @@ export default function SoftwarePage() {
     {
       title: "Testing Champ",
       slug: "testing-champ",
-      tagline: "Using AI to hone in on test skills",
+      tagline: "Personalized test preparation",
       icon: <FaFileAlt />,
       description:
         "Comprehensive test preparation platform that adapts to individual student needs. Features practice tests, performance analytics, personalized study plans, and stress management techniques. Covers standardized tests and customizable assessments.",
@@ -99,10 +98,10 @@ export default function SoftwarePage() {
     {
       title: "Art Bee",
       slug: "art-bee",
-      tagline: "AI-powered creative arts and visual learning platform",
+      tagline: "Creative arts and visual learning platform",
       icon: <FaPalette />,
       description:
-        "Art Bee buzzes with creativity, offering students and teachers an innovative platform for digital art creation and visual learning. Features AI-assisted drawing tools, collaborative art projects, and curriculum-integrated visual arts lessons. Includes virtual art galleries, step-by-step tutorials, and assessment tools for creative projects. Perfect for developing artistic skills while enhancing visual communication and creative thinking across all subjects.",
+        "Art Bee buzzes with creativity, offering students and teachers an innovative platform for digital art creation and visual learning. Features smart drawing tools, collaborative art projects, and curriculum-integrated visual arts lessons. Includes virtual art galleries, step-by-step tutorials, and assessment tools for creative projects. Perfect for developing artistic skills while enhancing visual communication and creative thinking across all subjects.",
     },
   ];
 

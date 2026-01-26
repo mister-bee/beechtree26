@@ -20,7 +20,7 @@ const serviceModals = {
   seo: {
     icon: Search,
     title: "SEO Optimization & Content Strategy",
-    description: "Drive organic traffic and establish thought leadership with our AI-powered SEO and content solutions.",
+    description: "Drive organic traffic and establish thought leadership with our comprehensive SEO and content solutions.",
     features: [
       {
         title: "Technical SEO Audit",
@@ -28,7 +28,7 @@ const serviceModals = {
       },
       {
         title: "Keyword Research & Mapping",
-        description: "AI-driven keyword discovery with search intent analysis and competitor gap identification."
+        description: "Intelligent keyword discovery with search intent analysis and competitor gap identification."
       },
       {
         title: "Content Calendar Planning",
@@ -54,7 +54,7 @@ const serviceModals = {
         description: "Unified dashboard for Facebook, Instagram, LinkedIn, Twitter/X, and TikTok content scheduling."
       },
       {
-        title: "AI Content Generation",
+        title: "Smart Content Generation",
         description: "Automated post creation with brand voice consistency and optimal posting time recommendations."
       },
       {
@@ -82,7 +82,7 @@ const serviceModals = {
       },
       {
         title: "Segmentation & Personalization",
-        description: "AI-powered audience segmentation with dynamic content blocks and personalized recommendations."
+        description: "Advanced audience segmentation with dynamic content blocks and personalized recommendations."
       },
       {
         title: "A/B Testing",
@@ -101,7 +101,7 @@ const serviceModals = {
   ppc: {
     icon: DollarSign,
     title: "Paid Advertising & PPC Management",
-    description: "Maximize your ad spend with AI-optimized campaigns across Google, Meta, and programmatic networks.",
+    description: "Maximize your ad spend with optimized campaigns across Google, Meta, and programmatic networks.",
     features: [
       {
         title: "Campaign Strategy",
@@ -109,7 +109,7 @@ const serviceModals = {
       },
       {
         title: "Creative Development",
-        description: "Ad copy, display banners, and video assets with AI-powered creative testing and iteration."
+        description: "Ad copy, display banners, and video assets with automated creative testing and iteration."
       },
       {
         title: "Bid Management",
@@ -165,10 +165,10 @@ export default function MarketingPage() {
               AI-Powered Marketing
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground text-balance">
-              Grow Your Business with AI
+              Grow Your Business Smarter
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-              BeechTree Marketing leverages cutting-edge AI to create data-driven campaigns that deliver real results
+              BeechTree Marketing leverages data-driven strategies to create campaigns that deliver real results
               for your business.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -220,7 +220,7 @@ export default function MarketingPage() {
               Marketing Intelligence That Works
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Our AI-powered platform transforms your marketing strategy with data-driven insights
+              Our platform transforms your marketing strategy with data-driven insights
             </p>
           </div>
 
@@ -232,7 +232,7 @@ export default function MarketingPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-card-foreground">Data-Driven Campaigns</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Leverage AI analytics to create campaigns that resonate with your target audience and drive
+                  Leverage advanced analytics to create campaigns that resonate with your target audience and drive
                   measurable results.
                 </p>
               </CardContent>
@@ -245,7 +245,7 @@ export default function MarketingPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-card-foreground">Content Automation</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Generate high-quality marketing content at scale with AI-powered copywriting and creative
+                  Generate high-quality marketing content at scale with automated copywriting and creative
                   automation tools.
                 </p>
               </CardContent>
@@ -258,7 +258,7 @@ export default function MarketingPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-card-foreground">Precision Targeting</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Reach the right audience at the right time with AI-optimized audience segmentation and
+                  Reach the right audience at the right time with precision targeting and
                   personalization.
                 </p>
               </CardContent>
@@ -589,7 +589,7 @@ export default function MarketingPage() {
             <Card className="bg-card border-border/50 shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
-                  &ldquo;BeechTree&apos;s AI-driven approach doubled our lead generation in just three months.&rdquo;
+                  &ldquo;BeechTree&apos;s data-driven approach doubled our lead generation in just three months.&rdquo;
                 </blockquote>
                 <div className="text-center space-y-1">
                   <p className="font-semibold text-foreground">Marketing Director</p>
@@ -632,7 +632,7 @@ export default function MarketingPage() {
             Ready to Supercharge Your Marketing?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Join businesses that trust BeechTree to deliver AI-powered marketing results.
+            Join businesses that trust BeechTree to deliver measurable marketing results.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 min-w-[180px]">
@@ -657,7 +657,7 @@ export default function MarketingPage() {
                 <Image src="/images/tree-logo-darkblue.webp" alt="BeechTree Logo" width={32} height={32} className="w-8 h-8" />
                 <span className="text-xl font-semibold text-foreground">BeechTree</span>
               </div>
-              <p className="text-sm text-muted-foreground">AI-powered marketing solutions</p>
+              <p className="text-sm text-muted-foreground">Data-driven marketing solutions</p>
             </div>
             <div>
               <h3 className="font-semibold text-foreground mb-4">Services</h3>

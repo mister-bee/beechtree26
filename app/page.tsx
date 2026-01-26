@@ -46,7 +46,7 @@ export default function HomePage() {
               Safe AI for Every Classroom
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-              BeechTree prioritizes student privacy and data security while empowering teachers with intuitive AI tools
+              BeechTree prioritizes student privacy and data security while empowering teachers with intuitive tools
               for personalized learning.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -90,7 +90,7 @@ export default function HomePage() {
               Built for Educators, Designed for Students
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Our platform combines cutting-edge AI with uncompromising safety standards
+              Our platform combines cutting-edge technology with uncompromising safety standards
             </p>
           </div>
 
@@ -146,10 +146,10 @@ export default function HomePage() {
                 Platform Overview
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
-                AI That Adapts to Your Classroom
+                Technology That Adapts to Your Classroom
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                BeechTree leverages advanced AI to create personalized learning experiences while maintaining the
+                BeechTree creates personalized learning experiences while maintaining the
                 highest standards of safety and privacy.
               </p>
               <ul className="space-y-4">
@@ -370,7 +370,7 @@ export default function HomePage() {
             Ready to Transform Your Classroom?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Join thousands of educators who trust BeechTree to deliver safe, effective AI-powered learning experiences.
+            Join thousands of educators who trust BeechTree to deliver safe, effective, personalized learning experiences.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 min-w-[180px]">
@@ -460,7 +460,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="pt-8 border-t border-border/40 text-center text-sm text-muted-foreground">
-            © 2026 BeechTree AI. All rights reserved.
+            © 2026 BeechTree LLC. All rights reserved.
           </div>
         </div>
       </footer>

@@ -46,7 +46,7 @@ export default function PropertyPage() {
               Manage Properties Smarter
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-              BeechTree Property Management streamlines operations with AI-powered tools for landlords, property
+              BeechTree Property Management streamlines operations with smart tools for landlords, property
               managers, and real estate professionals.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -110,7 +110,7 @@ export default function PropertyPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-card-foreground">Tenant Management</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Streamline tenant screening, onboarding, and communication with AI-powered tools that save time
+                  Streamline tenant screening, onboarding, and communication with intelligent tools that save time
                   and reduce friction.
                 </p>
               </CardContent>

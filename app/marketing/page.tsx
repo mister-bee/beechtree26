@@ -148,9 +148,6 @@ export default function MarketingPage() {
               <Link href="/marketing/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Contact
               </Link>
-              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Get Started
-              </Button>
             </div>
           </div>
         </div>
@@ -635,13 +632,10 @@ export default function MarketingPage() {
             Join businesses that trust BeechTree to deliver measurable marketing results.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 min-w-[180px]">
-              Get Started Today
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
             <Link href="/marketing/contact">
-              <Button size="lg" variant="outline" className="min-w-[180px] border-border hover:bg-accent bg-transparent">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 min-w-[180px]">
                 Schedule a Demo
+                <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
           </div>

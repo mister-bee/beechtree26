@@ -26,9 +26,6 @@ export default function PropertyPage() {
               <Link href="/property/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Contact
               </Link>
-              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Get Started
-              </Button>
             </div>
           </div>
         </div>
@@ -299,13 +296,10 @@ export default function PropertyPage() {
             Join property professionals who trust BeechTree to manage their portfolios efficiently.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 min-w-[180px]">
-              Get Started Today
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
             <Link href="/property/contact">
-              <Button size="lg" variant="outline" className="min-w-[180px] border-border hover:bg-accent bg-transparent">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 min-w-[180px]">
                 Schedule a Demo
+                <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
           </div>

@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { BarChart3, Zap, CheckCircle2, ArrowRight, Search, TrendingUp, Clock, Bot, Globe, Target, Share2, Mail, DollarSign, Eye, MousePointer, Users } from "lucide-react"
+import { Zap, CheckCircle2, ArrowRight, TrendingUp, Bot, Globe, Target } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { BusinessDropdown } from "@/components/ui/business-dropdown"
@@ -15,168 +15,199 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 
-// Service modal content data
-const serviceModals = {
-  automation: {
-    icon: Zap,
-    title: "Marketing Automation That Never Stops",
-    description: "Comprehensive automation across content, social, email, and engagement that works around the clock.",
+// Feature card modal content data
+const featureModals = {
+  aiRecommendsYou: {
+    icon: Bot,
+    title: "Get Recommended by AI Assistants",
+    description: "When potential customers ask ChatGPT, Claude, or Perplexity for recommendations, your business shows up—not your competitors.",
     features: [
       {
-        title: "Content Generation",
-        description: "Blog posts, social updates, and email copy created on autopilot while maintaining your brand voice."
+        title: "Conversational Query Optimization",
+        description: "We analyze how people naturally ask AI for recommendations and position your business to match those queries."
       },
       {
-        title: "Social Media Automation",
-        description: "Intelligent scheduling, posting, and responding to engagement across all platforms automatically."
+        title: "Entity Recognition Strategy",
+        description: "Build the digital footprint that helps AI systems recognize and recommend your business as an authority."
       },
       {
-        title: "Email Sequences",
-        description: "Automated nurture campaigns, follow-ups, and personalized outreach that runs continuously."
+        title: "Competitive Displacement",
+        description: "Identify which competitors AI currently recommends and develop strategies to take their position."
       },
       {
-        title: "Performance Monitoring",
-        description: "Continuous optimization based on what's working, adjusting strategies in real-time."
+        title: "Multi-Model Presence",
+        description: "Optimization across ChatGPT, Claude, Gemini, Perplexity, and emerging AI platforms."
       }
     ],
     stats: [
-      { value: "80%", label: "Time saved on marketing" },
-      { value: "24/7", label: "Always active" }
+      { value: "68%", label: "of users trust AI recommendations" },
+      { value: "#1", label: "Position in AI responses" }
     ]
   },
-  aiSeo: {
+  answerEnginePresence: {
     icon: Globe,
-    title: "SEO for How People Search Now",
-    description: "Optimize for AI search, answer engines, and AI-generated summaries where discovery is moving.",
+    title: "Become an AI-Cited Source",
+    description: "AI answer engines cite authoritative sources. We make sure you're one of them—appearing in Perplexity citations, Google AI Overviews, and Claude's responses.",
     features: [
       {
-        title: "Answer Engine Optimization",
-        description: "Content structured for AI comprehension so your business appears in AI-generated answers."
+        title: "Citation Architecture",
+        description: "Structure your content so AI systems recognize it as citable, authoritative information."
       },
+      {
+        title: "Perplexity Source Optimization",
+        description: "Get your content cited as a primary source in Perplexity's research-backed answers."
+      },
+      {
+        title: "Google AI Overview Targeting",
+        description: "Appear in Google's AI-generated summaries that now dominate search results."
+      },
+      {
+        title: "Authority Signal Building",
+        description: "Develop the trust signals that AI systems use to determine which sources to cite."
+      }
+    ],
+    stats: [
+      { value: "40%", label: "of searches now have AI answers" },
+      { value: "5x", label: "More traffic from citations" }
+    ]
+  },
+  alwaysOnSystems: {
+    icon: Zap,
+    title: "Marketing That Never Sleeps",
+    description: "Fully autonomous systems that create content, build authority, engage prospects, and optimize your AI visibility around the clock—without any manual intervention.",
+    features: [
+      {
+        title: "Autonomous Content Engine",
+        description: "AI-powered content creation that maintains your brand voice while publishing consistently across channels."
+      },
+      {
+        title: "Real-Time Authority Building",
+        description: "Continuous optimization of your digital presence to strengthen AI recognition and recommendations."
+      },
+      {
+        title: "Automated Lead Nurturing",
+        description: "Intelligent sequences that engage and qualify leads 24/7, so you wake up to warm prospects."
+      },
+      {
+        title: "Self-Optimizing Campaigns",
+        description: "Systems that analyze performance and adjust strategies automatically—no manual tweaking required."
+      }
+    ],
+    stats: [
+      { value: "24/7", label: "Always working" },
+      { value: "0", label: "Hours of your time" }
+    ]
+  }
+}
+
+// Service modal content data
+const serviceModals = {
+  aiSearch: {
+    icon: Bot,
+    title: "AI Search Optimization",
+    description: "Get discovered when people ask ChatGPT, Perplexity, Claude, and other AI assistants about businesses like yours.",
+    features: [
       {
         title: "LLM Citation Strategy",
-        description: "Strategic positioning to be mentioned and recommended in AI assistant responses."
+        description: "Position your business to be mentioned and recommended in AI-generated responses."
       },
       {
-        title: "AI Overview Optimization",
-        description: "Appearing prominently in AI-generated search summaries and featured snippets."
+        title: "Answer Engine Optimization",
+        description: "Structure your content so AI systems understand, extract, and recommend it."
       },
       {
-        title: "Semantic Content Architecture",
-        description: "Information structured so AI systems can understand, extract, and recommend your content."
+        title: "AI Overview Presence",
+        description: "Appear in Google's AI Overviews and other AI-generated search summaries."
+      },
+      {
+        title: "Conversational Discovery",
+        description: "Optimize for the questions people actually ask AI assistants about your industry."
       }
     ],
     stats: [
       { value: "3x", label: "AI search visibility" },
-      { value: "Top", label: "Answer engine results" }
+      { value: "Top", label: "AI recommendations" }
     ]
   },
-  seo: {
-    icon: Search,
-    title: "SEO Optimization & Content Strategy",
-    description: "Comprehensive search engine optimization to increase your visibility and drive organic traffic.",
+  answerEngines: {
+    icon: Globe,
+    title: "Answer Engine Visibility",
+    description: "Traditional SEO is dying. We optimize for how people actually search now—through AI conversations.",
     features: [
       {
-        title: "Keyword Research & Strategy",
-        description: "In-depth analysis to identify high-value keywords that align with your business goals."
+        title: "Perplexity Optimization",
+        description: "Get cited as a source in Perplexity's AI-powered research answers."
       },
       {
-        title: "On-Page Optimization",
-        description: "Technical and content optimizations to improve search rankings and user experience."
+        title: "ChatGPT Recommendations",
+        description: "Become the business ChatGPT suggests when users ask for recommendations."
       },
       {
-        title: "Content Strategy",
-        description: "Data-driven content planning that attracts, engages, and converts your target audience."
+        title: "Semantic Authority Building",
+        description: "Build the topical authority that AI systems use to determine credibility."
       },
       {
-        title: "Performance Tracking",
-        description: "Detailed analytics and reporting to measure SEO success and identify opportunities."
+        title: "Multi-Platform Presence",
+        description: "Consistent visibility across ChatGPT, Claude, Gemini, Copilot, and emerging AI platforms."
       }
     ],
     stats: [
-      { value: "150%", label: "Avg. traffic increase" },
-      { value: "Top 10", label: "Keyword rankings" }
+      { value: "New", label: "Discovery paradigm" },
+      { value: "First", label: "Mover advantage" }
     ]
   },
-  social: {
-    icon: Share2,
-    title: "Social Media Management & Analytics",
-    description: "Build your brand presence and engage your audience across all major social platforms.",
+  alwaysOnMarketing: {
+    icon: Zap,
+    title: "24/7 Marketing Automation",
+    description: "Autonomous systems that create, publish, and optimize your marketing around the clock—no manual work required.",
     features: [
       {
-        title: "Content Creation",
-        description: "Engaging posts, stories, and visuals tailored to each platform and your brand voice."
+        title: "Automated Content Creation",
+        description: "Blog posts, updates, and copy generated continuously while maintaining your voice."
       },
       {
-        title: "Community Management",
-        description: "Active engagement with your audience to build relationships and brand loyalty."
+        title: "Intelligent Publishing",
+        description: "Content scheduled and published at optimal times across all channels automatically."
       },
       {
-        title: "Platform Strategy",
-        description: "Customized approaches for each social network to maximize reach and engagement."
+        title: "Self-Optimizing Campaigns",
+        description: "Systems that learn what works and adjust strategies in real-time without intervention."
       },
       {
-        title: "Analytics & Insights",
-        description: "Comprehensive reporting on performance metrics and audience behavior."
+        title: "Lead Nurturing on Autopilot",
+        description: "Personalized follow-ups and engagement sequences that run while you sleep."
       }
     ],
     stats: [
-      { value: "3x", label: "Engagement increase" },
-      { value: "50K+", label: "Avg. reach growth" }
+      { value: "80%", label: "Time saved" },
+      { value: "24/7", label: "Always running" }
     ]
   },
-  email: {
-    icon: Mail,
-    title: "Email Marketing Automation",
-    description: "Nurture leads and drive conversions with intelligent, automated email campaigns.",
+  aiContent: {
+    icon: Target,
+    title: "Content AI Systems Recommend",
+    description: "Create content specifically designed to be cited, quoted, and recommended by AI assistants.",
     features: [
       {
-        title: "Campaign Design",
-        description: "Beautiful, responsive email templates that reflect your brand and drive action."
+        title: "AI-Optimized Structure",
+        description: "Content formatted for how AI systems parse, understand, and extract information."
       },
       {
-        title: "Automation Workflows",
-        description: "Triggered sequences that deliver the right message at the right time automatically."
+        title: "Authority Signals",
+        description: "Build the credibility markers that AI uses to determine trustworthiness."
       },
       {
-        title: "Segmentation & Personalization",
-        description: "Targeted messaging based on behavior, preferences, and customer journey stage."
+        title: "Citation-Worthy Content",
+        description: "Create resources that AI assistants reference when answering user questions."
       },
       {
-        title: "A/B Testing & Optimization",
-        description: "Continuous testing to improve open rates, click-through rates, and conversions."
+        title: "Competitive Positioning",
+        description: "Outrank competitors in AI recommendations through strategic content development."
       }
     ],
     stats: [
-      { value: "45%", label: "Avg. open rate" },
-      { value: "4x", label: "ROI improvement" }
-    ]
-  },
-  ppc: {
-    icon: DollarSign,
-    title: "Paid Advertising & PPC Management",
-    description: "Maximize your ad spend with data-driven campaigns across Google, Meta, and more.",
-    features: [
-      {
-        title: "Campaign Strategy",
-        description: "Custom advertising strategies aligned with your goals, budget, and target audience."
-      },
-      {
-        title: "Ad Creative & Copy",
-        description: "Compelling ads that capture attention and drive clicks across all platforms."
-      },
-      {
-        title: "Bid Management",
-        description: "Intelligent bid optimization to maximize conversions while minimizing cost per acquisition."
-      },
-      {
-        title: "Conversion Tracking",
-        description: "Full-funnel tracking to measure true ROI and optimize for business outcomes."
-      }
-    ],
-    stats: [
-      { value: "35%", label: "Lower CPA" },
-      { value: "2.5x", label: "ROAS improvement" }
+      { value: "5x", label: "AI citations" },
+      { value: "Top 3", label: "Recommendations" }
     ]
   }
 }
@@ -219,7 +250,7 @@ export default function MarketingPage() {
               Marketing That Works While You Sleep
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-              Automated marketing systems that run 24/7, plus SEO strategies built for how people actually search now—through AI assistants and answer engines.
+              People don&apos;t Google anymore—they ask ChatGPT. We make sure AI recommends your business.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <Link href="#services">
@@ -267,52 +298,178 @@ export default function MarketingPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
-              Marketing Intelligence That Works
+              Discovery Has Changed Forever
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Our platform transforms your marketing strategy with data-driven insights
+              Traditional SEO is becoming irrelevant. Here&apos;s how we position you for the new reality.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="bg-card border-border/50 hover:border-primary/50 transition-all hover:shadow-lg">
-              <CardContent className="p-8 space-y-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <BarChart3 className="w-6 h-6 text-primary" />
+            {/* AI Recommends You Card */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <Card className="bg-card border-border/50 hover:border-primary/50 transition-all hover:shadow-lg cursor-pointer">
+                  <CardContent className="p-8 space-y-4">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Bot className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-card-foreground">AI Recommends You</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      When someone asks ChatGPT or Perplexity for a recommendation in your industry, your business comes up first.
+                    </p>
+                  </CardContent>
+                </Card>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto theme-blue">
+                <DialogHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Bot className="w-5 h-5 text-primary" />
+                    </div>
+                    <DialogTitle className="text-xl">{featureModals.aiRecommendsYou.title}</DialogTitle>
+                  </div>
+                  <DialogDescription className="text-base">
+                    {featureModals.aiRecommendsYou.description}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-6 mt-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    {featureModals.aiRecommendsYou.stats.map((stat, idx) => (
+                      <div key={idx} className="bg-primary/5 rounded-lg p-4 text-center">
+                        <p className="text-2xl font-bold text-primary">{stat.value}</p>
+                        <p className="text-sm text-muted-foreground">{stat.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="font-semibold text-foreground">How We Do It</h4>
+                    {featureModals.aiRecommendsYou.features.map((feature, idx) => (
+                      <div key={idx} className="border-l-2 border-primary/30 pl-4">
+                        <p className="font-medium text-foreground">{feature.title}</p>
+                        <p className="text-sm text-muted-foreground">{feature.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <Link href="/marketing/contact">
+                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                      Get AI Recommendations Working for You
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </Link>
                 </div>
-                <h3 className="text-xl font-semibold text-card-foreground">Data-Driven Campaigns</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Leverage advanced analytics to create campaigns that resonate with your target audience and drive
-                  measurable results.
-                </p>
-              </CardContent>
-            </Card>
+              </DialogContent>
+            </Dialog>
 
-            <Card className="bg-card border-border/50 hover:border-primary/50 transition-all hover:shadow-lg">
-              <CardContent className="p-8 space-y-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Zap className="w-6 h-6 text-primary" />
+            {/* Answer Engine Presence Card */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <Card className="bg-card border-border/50 hover:border-primary/50 transition-all hover:shadow-lg cursor-pointer">
+                  <CardContent className="p-8 space-y-4">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Globe className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-card-foreground">Answer Engine Presence</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Get cited as a trusted source in AI-generated answers across Perplexity, Google AI Overviews, and Claude.
+                    </p>
+                  </CardContent>
+                </Card>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto theme-blue">
+                <DialogHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Globe className="w-5 h-5 text-primary" />
+                    </div>
+                    <DialogTitle className="text-xl">{featureModals.answerEnginePresence.title}</DialogTitle>
+                  </div>
+                  <DialogDescription className="text-base">
+                    {featureModals.answerEnginePresence.description}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-6 mt-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    {featureModals.answerEnginePresence.stats.map((stat, idx) => (
+                      <div key={idx} className="bg-primary/5 rounded-lg p-4 text-center">
+                        <p className="text-2xl font-bold text-primary">{stat.value}</p>
+                        <p className="text-sm text-muted-foreground">{stat.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="font-semibold text-foreground">How We Do It</h4>
+                    {featureModals.answerEnginePresence.features.map((feature, idx) => (
+                      <div key={idx} className="border-l-2 border-primary/30 pl-4">
+                        <p className="font-medium text-foreground">{feature.title}</p>
+                        <p className="text-sm text-muted-foreground">{feature.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <Link href="/marketing/contact">
+                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                      Start Getting Cited by AI
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </Link>
                 </div>
-                <h3 className="text-xl font-semibold text-card-foreground">Content Automation</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Generate high-quality marketing content at scale with automated copywriting and creative
-                  automation tools.
-                </p>
-              </CardContent>
-            </Card>
+              </DialogContent>
+            </Dialog>
 
-            <Card className="bg-card border-border/50 hover:border-primary/50 transition-all hover:shadow-lg">
-              <CardContent className="p-8 space-y-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Target className="w-6 h-6 text-primary" />
+            {/* Always-On Systems Card */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <Card className="bg-card border-border/50 hover:border-primary/50 transition-all hover:shadow-lg cursor-pointer">
+                  <CardContent className="p-8 space-y-4">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Zap className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-card-foreground">Always-On Systems</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Autonomous marketing that runs 24/7—creating content, building authority, and optimizing your AI visibility while you sleep.
+                    </p>
+                  </CardContent>
+                </Card>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto theme-blue">
+                <DialogHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Zap className="w-5 h-5 text-primary" />
+                    </div>
+                    <DialogTitle className="text-xl">{featureModals.alwaysOnSystems.title}</DialogTitle>
+                  </div>
+                  <DialogDescription className="text-base">
+                    {featureModals.alwaysOnSystems.description}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-6 mt-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    {featureModals.alwaysOnSystems.stats.map((stat, idx) => (
+                      <div key={idx} className="bg-primary/5 rounded-lg p-4 text-center">
+                        <p className="text-2xl font-bold text-primary">{stat.value}</p>
+                        <p className="text-sm text-muted-foreground">{stat.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="font-semibold text-foreground">How We Do It</h4>
+                    {featureModals.alwaysOnSystems.features.map((feature, idx) => (
+                      <div key={idx} className="border-l-2 border-primary/30 pl-4">
+                        <p className="font-medium text-foreground">{feature.title}</p>
+                        <p className="text-sm text-muted-foreground">{feature.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <Link href="/marketing/contact">
+                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                      Set Up Your Autonomous System
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </Link>
                 </div>
-                <h3 className="text-xl font-semibold text-card-foreground">Precision Targeting</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Reach the right audience at the right time with precision targeting and
-                  personalization.
-                </p>
-              </CardContent>
-            </Card>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </section>
@@ -326,19 +483,18 @@ export default function MarketingPage() {
                 Our Services
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
-                Full-Stack Marketing Solutions
+                Marketing for the AI Era
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                From strategy to execution, BeechTree Marketing provides end-to-end solutions powered by
-                artificial intelligence.
+                The way people find businesses has changed. They ask ChatGPT, not Google. We help you get discovered where it matters now.
               </p>
               <ul className="space-y-4">
-                {/* SEO Service Modal */}
+                {/* AI Search Optimization Modal */}
                 <Dialog>
                   <DialogTrigger asChild>
                     <li className="flex items-start gap-3 cursor-pointer group hover:bg-accent/50 -mx-3 px-3 py-2 rounded-lg transition-colors">
-                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-foreground group-hover:text-primary transition-colors">SEO optimization and content strategy</span>
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                      <span className="text-foreground group-hover:text-primary transition-colors">AI search optimization (ChatGPT, Perplexity, Claude)</span>
                       <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity ml-auto mt-0.5" />
                     </li>
                   </DialogTrigger>
@@ -346,17 +502,17 @@ export default function MarketingPage() {
                     <DialogHeader>
                       <div className="flex items-center gap-3 mb-2">
                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                          <Search className="w-5 h-5 text-primary" />
+                          <Bot className="w-5 h-5 text-primary" />
                         </div>
-                        <DialogTitle className="text-xl">{serviceModals.seo.title}</DialogTitle>
+                        <DialogTitle className="text-xl">{serviceModals.aiSearch.title}</DialogTitle>
                       </div>
                       <DialogDescription className="text-base">
-                        {serviceModals.seo.description}
+                        {serviceModals.aiSearch.description}
                       </DialogDescription>
                     </DialogHeader>
                     <div className="space-y-6 mt-4">
                       <div className="grid grid-cols-2 gap-4">
-                        {serviceModals.seo.stats.map((stat, idx) => (
+                        {serviceModals.aiSearch.stats.map((stat, idx) => (
                           <div key={idx} className="bg-primary/5 rounded-lg p-4 text-center">
                             <p className="text-2xl font-bold text-primary">{stat.value}</p>
                             <p className="text-sm text-muted-foreground">{stat.label}</p>
@@ -365,7 +521,7 @@ export default function MarketingPage() {
                       </div>
                       <div className="space-y-4">
                         <h4 className="font-semibold text-foreground">What&apos;s Included</h4>
-                        {serviceModals.seo.features.map((feature, idx) => (
+                        {serviceModals.aiSearch.features.map((feature, idx) => (
                           <div key={idx} className="border-l-2 border-primary/30 pl-4">
                             <p className="font-medium text-foreground">{feature.title}</p>
                             <p className="text-sm text-muted-foreground">{feature.description}</p>
@@ -374,7 +530,7 @@ export default function MarketingPage() {
                       </div>
                       <Link href="/marketing/contact">
                         <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                          Get Started with SEO
+                          Get Started with AI Search
                           <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
                       </Link>
@@ -382,12 +538,12 @@ export default function MarketingPage() {
                   </DialogContent>
                 </Dialog>
 
-                {/* Social Media Service Modal */}
+                {/* Answer Engine Visibility Modal */}
                 <Dialog>
                   <DialogTrigger asChild>
                     <li className="flex items-start gap-3 cursor-pointer group hover:bg-accent/50 -mx-3 px-3 py-2 rounded-lg transition-colors">
-                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-foreground group-hover:text-primary transition-colors">Social media management and analytics</span>
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                      <span className="text-foreground group-hover:text-primary transition-colors">Answer engine visibility across AI platforms</span>
                       <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity ml-auto mt-0.5" />
                     </li>
                   </DialogTrigger>
@@ -395,17 +551,17 @@ export default function MarketingPage() {
                     <DialogHeader>
                       <div className="flex items-center gap-3 mb-2">
                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                          <Share2 className="w-5 h-5 text-primary" />
+                          <Globe className="w-5 h-5 text-primary" />
                         </div>
-                        <DialogTitle className="text-xl">{serviceModals.social.title}</DialogTitle>
+                        <DialogTitle className="text-xl">{serviceModals.answerEngines.title}</DialogTitle>
                       </div>
                       <DialogDescription className="text-base">
-                        {serviceModals.social.description}
+                        {serviceModals.answerEngines.description}
                       </DialogDescription>
                     </DialogHeader>
                     <div className="space-y-6 mt-4">
                       <div className="grid grid-cols-2 gap-4">
-                        {serviceModals.social.stats.map((stat, idx) => (
+                        {serviceModals.answerEngines.stats.map((stat, idx) => (
                           <div key={idx} className="bg-primary/5 rounded-lg p-4 text-center">
                             <p className="text-2xl font-bold text-primary">{stat.value}</p>
                             <p className="text-sm text-muted-foreground">{stat.label}</p>
@@ -414,7 +570,7 @@ export default function MarketingPage() {
                       </div>
                       <div className="space-y-4">
                         <h4 className="font-semibold text-foreground">What&apos;s Included</h4>
-                        {serviceModals.social.features.map((feature, idx) => (
+                        {serviceModals.answerEngines.features.map((feature, idx) => (
                           <div key={idx} className="border-l-2 border-primary/30 pl-4">
                             <p className="font-medium text-foreground">{feature.title}</p>
                             <p className="text-sm text-muted-foreground">{feature.description}</p>
@@ -423,7 +579,7 @@ export default function MarketingPage() {
                       </div>
                       <Link href="/marketing/contact">
                         <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                          Get Started with Social Media
+                          Get Started with Answer Engines
                           <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
                       </Link>
@@ -431,12 +587,12 @@ export default function MarketingPage() {
                   </DialogContent>
                 </Dialog>
 
-                {/* Email Marketing Service Modal */}
+                {/* Always-On Marketing Automation Modal */}
                 <Dialog>
                   <DialogTrigger asChild>
                     <li className="flex items-start gap-3 cursor-pointer group hover:bg-accent/50 -mx-3 px-3 py-2 rounded-lg transition-colors">
-                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-foreground group-hover:text-primary transition-colors">Email marketing automation</span>
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                      <span className="text-foreground group-hover:text-primary transition-colors">24/7 autonomous marketing systems</span>
                       <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity ml-auto mt-0.5" />
                     </li>
                   </DialogTrigger>
@@ -444,17 +600,17 @@ export default function MarketingPage() {
                     <DialogHeader>
                       <div className="flex items-center gap-3 mb-2">
                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                          <Mail className="w-5 h-5 text-primary" />
+                          <Zap className="w-5 h-5 text-primary" />
                         </div>
-                        <DialogTitle className="text-xl">{serviceModals.email.title}</DialogTitle>
+                        <DialogTitle className="text-xl">{serviceModals.alwaysOnMarketing.title}</DialogTitle>
                       </div>
                       <DialogDescription className="text-base">
-                        {serviceModals.email.description}
+                        {serviceModals.alwaysOnMarketing.description}
                       </DialogDescription>
                     </DialogHeader>
                     <div className="space-y-6 mt-4">
                       <div className="grid grid-cols-2 gap-4">
-                        {serviceModals.email.stats.map((stat, idx) => (
+                        {serviceModals.alwaysOnMarketing.stats.map((stat, idx) => (
                           <div key={idx} className="bg-primary/5 rounded-lg p-4 text-center">
                             <p className="text-2xl font-bold text-primary">{stat.value}</p>
                             <p className="text-sm text-muted-foreground">{stat.label}</p>
@@ -463,7 +619,7 @@ export default function MarketingPage() {
                       </div>
                       <div className="space-y-4">
                         <h4 className="font-semibold text-foreground">What&apos;s Included</h4>
-                        {serviceModals.email.features.map((feature, idx) => (
+                        {serviceModals.alwaysOnMarketing.features.map((feature, idx) => (
                           <div key={idx} className="border-l-2 border-primary/30 pl-4">
                             <p className="font-medium text-foreground">{feature.title}</p>
                             <p className="text-sm text-muted-foreground">{feature.description}</p>
@@ -472,7 +628,7 @@ export default function MarketingPage() {
                       </div>
                       <Link href="/marketing/contact">
                         <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                          Get Started with Email Marketing
+                          Get Started with Automation
                           <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
                       </Link>
@@ -480,12 +636,12 @@ export default function MarketingPage() {
                   </DialogContent>
                 </Dialog>
 
-                {/* PPC Service Modal */}
+                {/* AI Content Modal */}
                 <Dialog>
                   <DialogTrigger asChild>
                     <li className="flex items-start gap-3 cursor-pointer group hover:bg-accent/50 -mx-3 px-3 py-2 rounded-lg transition-colors">
-                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-foreground group-hover:text-primary transition-colors">Paid advertising and PPC management</span>
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                      <span className="text-foreground group-hover:text-primary transition-colors">Content that AI systems recommend</span>
                       <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity ml-auto mt-0.5" />
                     </li>
                   </DialogTrigger>
@@ -493,17 +649,17 @@ export default function MarketingPage() {
                     <DialogHeader>
                       <div className="flex items-center gap-3 mb-2">
                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                          <DollarSign className="w-5 h-5 text-primary" />
+                          <Target className="w-5 h-5 text-primary" />
                         </div>
-                        <DialogTitle className="text-xl">{serviceModals.ppc.title}</DialogTitle>
+                        <DialogTitle className="text-xl">{serviceModals.aiContent.title}</DialogTitle>
                       </div>
                       <DialogDescription className="text-base">
-                        {serviceModals.ppc.description}
+                        {serviceModals.aiContent.description}
                       </DialogDescription>
                     </DialogHeader>
                     <div className="space-y-6 mt-4">
                       <div className="grid grid-cols-2 gap-4">
-                        {serviceModals.ppc.stats.map((stat, idx) => (
+                        {serviceModals.aiContent.stats.map((stat, idx) => (
                           <div key={idx} className="bg-primary/5 rounded-lg p-4 text-center">
                             <p className="text-2xl font-bold text-primary">{stat.value}</p>
                             <p className="text-sm text-muted-foreground">{stat.label}</p>
@@ -512,7 +668,7 @@ export default function MarketingPage() {
                       </div>
                       <div className="space-y-4">
                         <h4 className="font-semibold text-foreground">What&apos;s Included</h4>
-                        {serviceModals.ppc.features.map((feature, idx) => (
+                        {serviceModals.aiContent.features.map((feature, idx) => (
                           <div key={idx} className="border-l-2 border-primary/30 pl-4">
                             <p className="font-medium text-foreground">{feature.title}</p>
                             <p className="text-sm text-muted-foreground">{feature.description}</p>
@@ -521,7 +677,7 @@ export default function MarketingPage() {
                       </div>
                       <Link href="/marketing/contact">
                         <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                          Get Started with PPC
+                          Get Started with AI Content
                           <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
                       </Link>
@@ -542,15 +698,15 @@ export default function MarketingPage() {
                 <div className="space-y-5">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                      <BarChart3 className="w-6 h-6 text-primary" />
+                      <Bot className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground">Campaign Analytics</p>
-                      <p className="text-sm text-muted-foreground">Real-time performance tracking</p>
+                      <p className="font-semibold text-foreground">AI Visibility Dashboard</p>
+                      <p className="text-sm text-muted-foreground">Track your AI search presence</p>
                     </div>
                   </div>
 
-                  {/* Analytics Dashboard Mockup */}
+                  {/* AI Analytics Dashboard Mockup */}
                   <div className="bg-accent/30 rounded-lg p-4 space-y-4">
                     {/* Mini chart bars */}
                     <div className="flex items-end gap-2 h-20 px-2">
@@ -568,51 +724,51 @@ export default function MarketingPage() {
                       <div className="bg-card rounded-lg p-3 text-center">
                         <div className="flex items-center justify-center gap-1 text-green-500 text-xs mb-1">
                           <TrendingUp className="w-3 h-3" />
-                          <span>+24%</span>
+                          <span>+340%</span>
+                        </div>
+                        <p className="text-lg font-bold text-foreground">847</p>
+                        <p className="text-xs text-muted-foreground">AI Citations</p>
+                      </div>
+                      <div className="bg-card rounded-lg p-3 text-center">
+                        <div className="flex items-center justify-center gap-1 text-green-500 text-xs mb-1">
+                          <TrendingUp className="w-3 h-3" />
+                          <span>+52%</span>
+                        </div>
+                        <p className="text-lg font-bold text-foreground">Top 3</p>
+                        <p className="text-xs text-muted-foreground">AI Ranking</p>
+                      </div>
+                      <div className="bg-card rounded-lg p-3 text-center">
+                        <div className="flex items-center justify-center gap-1 text-green-500 text-xs mb-1">
+                          <TrendingUp className="w-3 h-3" />
+                          <span>+89%</span>
                         </div>
                         <p className="text-lg font-bold text-foreground">12.4K</p>
-                        <p className="text-xs text-muted-foreground">Visitors</p>
-                      </div>
-                      <div className="bg-card rounded-lg p-3 text-center">
-                        <div className="flex items-center justify-center gap-1 text-green-500 text-xs mb-1">
-                          <TrendingUp className="w-3 h-3" />
-                          <span>+18%</span>
-                        </div>
-                        <p className="text-lg font-bold text-foreground">3.2%</p>
-                        <p className="text-xs text-muted-foreground">Conv. Rate</p>
-                      </div>
-                      <div className="bg-card rounded-lg p-3 text-center">
-                        <div className="flex items-center justify-center gap-1 text-green-500 text-xs mb-1">
-                          <TrendingUp className="w-3 h-3" />
-                          <span>+32%</span>
-                        </div>
-                        <p className="text-lg font-bold text-foreground">$8.2K</p>
-                        <p className="text-xs text-muted-foreground">Revenue</p>
+                        <p className="text-xs text-muted-foreground">AI Referrals</p>
                       </div>
                     </div>
 
-                    {/* Campaign metrics */}
+                    {/* AI metrics */}
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
                         <div className="flex items-center gap-2">
-                          <Eye className="w-4 h-4 text-muted-foreground" />
-                          <span className="text-muted-foreground">Impressions</span>
+                          <Bot className="w-4 h-4 text-muted-foreground" />
+                          <span className="text-muted-foreground">ChatGPT Mentions</span>
                         </div>
-                        <span className="font-medium text-foreground">245,892</span>
+                        <span className="font-medium text-foreground">1,247</span>
                       </div>
                       <div className="flex items-center justify-between text-sm">
                         <div className="flex items-center gap-2">
-                          <MousePointer className="w-4 h-4 text-muted-foreground" />
-                          <span className="text-muted-foreground">Clicks</span>
+                          <Globe className="w-4 h-4 text-muted-foreground" />
+                          <span className="text-muted-foreground">Perplexity Citations</span>
                         </div>
-                        <span className="font-medium text-foreground">8,742</span>
+                        <span className="font-medium text-foreground">892</span>
                       </div>
                       <div className="flex items-center justify-between text-sm">
                         <div className="flex items-center gap-2">
-                          <Users className="w-4 h-4 text-muted-foreground" />
-                          <span className="text-muted-foreground">New Leads</span>
+                          <Target className="w-4 h-4 text-muted-foreground" />
+                          <span className="text-muted-foreground">AI Overview Appearances</span>
                         </div>
-                        <span className="font-medium text-foreground">312</span>
+                        <span className="font-medium text-foreground">156</span>
                       </div>
                     </div>
                   </div>
@@ -628,10 +784,10 @@ export default function MarketingPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
-              Trusted by Growing Businesses
+              Early Movers in the AI Era
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              See what our clients say about BeechTree Marketing
+              Businesses that got ahead of the AI discovery shift
             </p>
           </div>
 
@@ -639,11 +795,11 @@ export default function MarketingPage() {
             <Card className="bg-card border-border/50 shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
-                  &ldquo;BeechTree&apos;s data-driven approach doubled our lead generation in just three months.&rdquo;
+                  &ldquo;We now show up when people ask ChatGPT for recommendations in our space. That&apos;s where our best leads come from.&rdquo;
                 </blockquote>
                 <div className="text-center space-y-1">
-                  <p className="font-semibold text-foreground">Marketing Director</p>
-                  <p className="text-sm text-muted-foreground">Tech Startup</p>
+                  <p className="font-semibold text-foreground">Marcus T.</p>
+                  <p className="text-sm text-muted-foreground">Founder, SaaS Company</p>
                 </div>
               </CardContent>
             </Card>
@@ -651,11 +807,11 @@ export default function MarketingPage() {
             <Card className="bg-card border-border/50 shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
-                  &ldquo;The content automation tools have transformed how we approach social media marketing.&rdquo;
+                  &ldquo;Our competitors are still optimizing for Google. We&apos;re getting cited by Perplexity and Claude. The game has changed.&rdquo;
                 </blockquote>
                 <div className="text-center space-y-1">
-                  <p className="font-semibold text-foreground">Brand Manager</p>
-                  <p className="text-sm text-muted-foreground">E-commerce Company</p>
+                  <p className="font-semibold text-foreground">Rachel K.</p>
+                  <p className="text-sm text-muted-foreground">VP of Growth, B2B Services</p>
                 </div>
               </CardContent>
             </Card>
@@ -663,11 +819,11 @@ export default function MarketingPage() {
             <Card className="bg-card border-border/50 shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
-                  &ldquo;Finally, a marketing partner that understands data and delivers real ROI.&rdquo;
+                  &ldquo;BeechTree understood the shift before anyone else. They positioned us for how people actually find businesses now.&rdquo;
                 </blockquote>
                 <div className="text-center space-y-1">
-                  <p className="font-semibold text-foreground">CEO</p>
-                  <p className="text-sm text-muted-foreground">Small Business</p>
+                  <p className="font-semibold text-foreground">David M.</p>
+                  <p className="text-sm text-muted-foreground">CEO, Professional Services</p>
                 </div>
               </CardContent>
             </Card>
@@ -679,15 +835,15 @@ export default function MarketingPage() {
       <section className="py-20 px-4 lg:px-8">
         <div className="container mx-auto max-w-4xl text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
-            Ready to Supercharge Your Marketing?
+            The Window Is Closing
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Join businesses that trust BeechTree to deliver measurable marketing results.
+            Early movers in AI search are locking in their positions. The longer you wait, the harder it gets to catch up.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/marketing/contact">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 min-w-[180px]">
-                Schedule a Demo
+                Get Your AI Visibility Audit
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
@@ -704,24 +860,24 @@ export default function MarketingPage() {
                 <Image src="/images/tree-logo-darkblue.webp" alt="BeechTree Logo" width={32} height={32} className="w-8 h-8" />
                 <span className="text-xl font-semibold text-foreground">BeechTree</span>
               </div>
-              <p className="text-sm text-muted-foreground">Data-driven marketing solutions</p>
+              <p className="text-sm text-muted-foreground">Marketing for the AI era</p>
             </div>
             <div>
               <h3 className="font-semibold text-foreground mb-4">Services</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    SEO & Content
+                  <a href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    AI Search Optimization
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    Social Media
+                  <a href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Answer Engines
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    Paid Ads
+                  <a href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    24/7 Automation
                   </a>
                 </li>
               </ul>

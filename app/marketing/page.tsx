@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Zap, CheckCircle2, ArrowRight, TrendingUp, Bot, Globe, Target } from "lucide-react"
+import { Zap, CheckCircle2, ArrowRight, TrendingUp, Bot, Globe, Target, Sparkles, Brain, RefreshCw, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { BusinessDropdown } from "@/components/ui/business-dropdown"
@@ -470,6 +470,150 @@ export default function MarketingPage() {
                 </div>
               </DialogContent>
             </Dialog>
+          </div>
+        </div>
+      </section>
+
+      {/* Layla - Flagship Product */}
+      <section className="py-20 px-4 lg:px-8">
+        <div className="container mx-auto max-w-6xl">
+          <div className="relative">
+            <div className="absolute inset-0 bg-primary/5 blur-3xl rounded-full" />
+            <div className="relative z-10 bg-gradient-to-br from-card to-accent/20 border border-primary/20 rounded-2xl p-8 md:p-12">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary">
+                    <Sparkles className="w-4 h-4" />
+                    Flagship Technology
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
+                    Meet Layla
+                  </h2>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Our agentic AI platform that doesn&apos;t just execute—it <span className="text-foreground font-medium">learns, adapts, and evolves</span>. Layla creates intelligent marketing personas that understand your market and grow smarter with every interaction.
+                  </p>
+                  <div className="grid sm:grid-cols-3 gap-4 pt-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                        <Brain className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">Learns</p>
+                        <p className="text-sm text-muted-foreground">From every market signal</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                        <RefreshCw className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">Adapts</p>
+                        <p className="text-sm text-muted-foreground">As conditions change</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                        <Users className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">Personas</p>
+                        <p className="text-sm text-muted-foreground">That evolve over time</p>
+                      </div>
+                    </div>
+                  </div>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                        Learn More About Layla
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto theme-blue">
+                      <DialogHeader>
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <Sparkles className="w-5 h-5 text-primary" />
+                          </div>
+                          <DialogTitle className="text-xl">Layla: Agentic Marketing Intelligence</DialogTitle>
+                        </div>
+                        <DialogDescription className="text-base">
+                          The first marketing platform with true agentic AI—personas that think, learn, and act on your behalf.
+                        </DialogDescription>
+                      </DialogHeader>
+                      <div className="space-y-6 mt-4">
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="bg-primary/5 rounded-lg p-4 text-center">
+                            <p className="text-2xl font-bold text-primary">Agentic</p>
+                            <p className="text-sm text-muted-foreground">Autonomous decision-making</p>
+                          </div>
+                          <div className="bg-primary/5 rounded-lg p-4 text-center">
+                            <p className="text-2xl font-bold text-primary">Evolving</p>
+                            <p className="text-sm text-muted-foreground">Smarter every day</p>
+                          </div>
+                        </div>
+                        <div className="space-y-4">
+                          <h4 className="font-semibold text-foreground">How Layla Works</h4>
+                          <div className="border-l-2 border-primary/30 pl-4">
+                            <p className="font-medium text-foreground">Intelligent Personas</p>
+                            <p className="text-sm text-muted-foreground">Layla creates AI personas that represent different aspects of your marketing strategy—each one learns independently and collaborates intelligently.</p>
+                          </div>
+                          <div className="border-l-2 border-primary/30 pl-4">
+                            <p className="font-medium text-foreground">Continuous Market Learning</p>
+                            <p className="text-sm text-muted-foreground">Every interaction, trend, and market shift feeds back into Layla&apos;s understanding. Your marketing gets smarter without any manual updates.</p>
+                          </div>
+                          <div className="border-l-2 border-primary/30 pl-4">
+                            <p className="font-medium text-foreground">Adaptive Strategy Execution</p>
+                            <p className="text-sm text-muted-foreground">When the market changes, Layla doesn&apos;t wait for instructions—it adapts your strategy in real-time based on what it&apos;s learned.</p>
+                          </div>
+                          <div className="border-l-2 border-primary/30 pl-4">
+                            <p className="font-medium text-foreground">Cross-Platform Intelligence</p>
+                            <p className="text-sm text-muted-foreground">Insights from one channel inform actions on another. Layla sees the full picture and optimizes holistically.</p>
+                          </div>
+                        </div>
+                        <Link href="/marketing/contact">
+                          <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                            See Layla in Action
+                            <ArrowRight className="ml-2 w-4 h-4" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                </div>
+                <div className="relative hidden lg:block">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-xl" />
+                  <div className="relative bg-card/80 backdrop-blur border border-border/50 rounded-xl p-6 space-y-4">
+                    <div className="flex items-center gap-3 pb-4 border-b border-border/50">
+                      <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                        <Sparkles className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground">Layla</p>
+                        <p className="text-xs text-muted-foreground">Active &bull; Learning</p>
+                      </div>
+                      <div className="ml-auto flex items-center gap-1">
+                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                        <span className="text-xs text-green-500">Live</span>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="bg-accent/50 rounded-lg p-3">
+                        <p className="text-xs text-muted-foreground mb-1">Market Insight Detected</p>
+                        <p className="text-sm text-foreground">&ldquo;Competitor X shifted messaging to AI features. Adjusting your positioning to emphasize human + AI collaboration.&rdquo;</p>
+                      </div>
+                      <div className="bg-accent/50 rounded-lg p-3">
+                        <p className="text-xs text-muted-foreground mb-1">Persona Update</p>
+                        <p className="text-sm text-foreground">&ldquo;Enterprise Buyer persona updated: now prioritizes security messaging based on 47 recent interactions.&rdquo;</p>
+                      </div>
+                      <div className="bg-primary/10 rounded-lg p-3 border border-primary/20">
+                        <p className="text-xs text-primary mb-1">Action Taken</p>
+                        <p className="text-sm text-foreground">&ldquo;Published optimized content to 3 channels. Projected +23% AI citation rate.&rdquo;</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

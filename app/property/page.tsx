@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Building2, Users, Wrench, FileText, CheckCircle2, ArrowRight } from "lucide-react"
+import { Building2, Brain, FileCode, Coins, CheckCircle2, ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { BusinessDropdown } from "@/components/ui/business-dropdown"
@@ -37,14 +37,14 @@ export default function PropertyPage() {
           <div className="text-center space-y-6 max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              Smart Property Management
+              AI + Blockchain Powered
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground text-balance">
-              Manage Properties Smarter
+              Property Management, Reimagined
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-              BeechTree Property Management streamlines operations with smart tools for landlords, property
-              managers, and real estate professionals.
+              The first platform combining AI intelligence with smart contract automation. Predictive insights meet
+              trustless execution for the future of property management.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <Link href="#solutions">
@@ -71,15 +71,15 @@ export default function PropertyPage() {
               <div className="grid md:grid-cols-3 gap-8 text-center">
                 <div>
                   <p className="text-4xl font-bold text-primary">500+</p>
-                  <p className="text-muted-foreground mt-2">Properties managed</p>
+                  <p className="text-muted-foreground mt-2">Smart Contracts Deployed</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-bold text-primary">40%</p>
-                  <p className="text-muted-foreground mt-2">Reduction in vacancies</p>
+                  <p className="text-4xl font-bold text-primary">99.9%</p>
+                  <p className="text-muted-foreground mt-2">Payment Automation</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-bold text-primary">24/7</p>
-                  <p className="text-muted-foreground mt-2">Automated support</p>
+                  <p className="text-4xl font-bold text-primary">0</p>
+                  <p className="text-muted-foreground mt-2">Late Payments (Smart Contract Enforced)</p>
                 </div>
               </div>
             </div>
@@ -92,10 +92,10 @@ export default function PropertyPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
-              Everything You Need to Manage Properties
+              Where AI Meets Blockchain
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Our comprehensive platform handles every aspect of property management
+              Next-generation property management powered by intelligent automation and trustless technology
             </p>
           </div>
 
@@ -103,12 +103,12 @@ export default function PropertyPage() {
             <Card className="bg-card border-border/50 hover:border-primary/50 transition-all hover:shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Users className="w-6 h-6 text-primary" />
+                  <Brain className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-card-foreground">Tenant Management</h3>
+                <h3 className="text-xl font-semibold text-card-foreground">AI-Powered Intelligence</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Streamline tenant screening, onboarding, and communication with intelligent tools that save time
-                  and reduce friction.
+                  Predictive maintenance that catches issues before they happen. AI tenant screening with fraud detection.
+                  Dynamic pricing optimization that maximizes your returns.
                 </p>
               </CardContent>
             </Card>
@@ -116,12 +116,12 @@ export default function PropertyPage() {
             <Card className="bg-card border-border/50 hover:border-primary/50 transition-all hover:shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Wrench className="w-6 h-6 text-primary" />
+                  <FileCode className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-card-foreground">Maintenance Automation</h3>
+                <h3 className="text-xl font-semibold text-card-foreground">Smart Contract Leases</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Automate maintenance requests, vendor coordination, and preventive maintenance scheduling with
-                  smart workflows.
+                  Self-executing lease agreements that enforce terms automatically. Rent collection happens on-chain with
+                  complete transparency and trustless enforcement.
                 </p>
               </CardContent>
             </Card>
@@ -129,12 +129,12 @@ export default function PropertyPage() {
             <Card className="bg-card border-border/50 hover:border-primary/50 transition-all hover:shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <FileText className="w-6 h-6 text-primary" />
+                  <Coins className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-card-foreground">Financial Reporting</h3>
+                <h3 className="text-xl font-semibold text-card-foreground">Crypto-Native Payments</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Get real-time insights into property performance with automated rent collection, expense tracking,
-                  and financial reports.
+                  Accept stablecoins and crypto with instant settlements and lower fees. Automatic conversion to fiat
+                  means you get dollars while tenants pay how they prefer.
                 </p>
               </CardContent>
             </Card>
@@ -151,28 +151,28 @@ export default function PropertyPage() {
                 Our Solutions
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
-                Built for Modern Property Management
+                Built for the Future of Property Management
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Whether you manage a single property or an entire portfolio, BeechTree provides the tools you need
-                to succeed.
+                Combine the power of AI insights with blockchain security. Every transaction verified, every prediction
+                data-driven.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Online rent collection and payment processing</span>
+                  <span className="text-foreground">Smart contract rent collection—automatic, trustless, on-time every time</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Tenant portal for self-service requests</span>
+                  <span className="text-foreground">AI tenant screening with fraud detection and creditworthiness prediction</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Automated lease renewals and reminders</span>
+                  <span className="text-foreground">Self-executing lease renewals with blockchain verification</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Document storage and e-signatures</span>
+                  <span className="text-foreground">NFT-based property records and immutable transaction history</span>
                 </li>
               </ul>
               <Link href="/property/contact">
@@ -191,40 +191,52 @@ export default function PropertyPage() {
                       <Building2 className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground">Property Dashboard</p>
-                      <p className="text-sm text-muted-foreground">All your properties at a glance</p>
+                      <p className="font-semibold text-foreground">AI + Blockchain Dashboard</p>
+                      <p className="text-sm text-muted-foreground">Smart contracts & AI insights combined</p>
                     </div>
                   </div>
                   {/* Mock Dashboard */}
                   <div className="space-y-3">
                     {/* Property List */}
-                    <div className="flex items-center justify-between p-3 bg-accent/50 rounded-lg">
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full bg-green-500" />
-                        <span className="text-sm font-medium text-foreground">142 Oak Street</span>
+                    <div className="p-3 bg-accent/50 rounded-lg space-y-1">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="w-2 h-2 rounded-full bg-green-500" />
+                          <span className="text-sm font-medium text-foreground">142 Oak Street</span>
+                        </div>
+                        <span className="text-xs text-green-600 font-medium">Smart Contract Active</span>
                       </div>
-                      <span className="text-xs text-muted-foreground">Occupied</span>
+                      <p className="text-xs text-muted-foreground pl-5">AI: HVAC maintenance predicted in 2 weeks</p>
                     </div>
-                    <div className="flex items-center justify-between p-3 bg-accent/50 rounded-lg">
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full bg-green-500" />
-                        <span className="text-sm font-medium text-foreground">89 Maple Ave, Unit 3</span>
+                    <div className="p-3 bg-accent/50 rounded-lg space-y-1">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="w-2 h-2 rounded-full bg-green-500" />
+                          <span className="text-sm font-medium text-foreground">89 Maple Ave</span>
+                        </div>
+                        <span className="text-xs text-green-600 font-medium">Rent Auto-Collected</span>
                       </div>
-                      <span className="text-xs text-muted-foreground">Occupied</span>
+                      <p className="text-xs text-muted-foreground pl-5">AI: 98% tenant retention predicted</p>
                     </div>
-                    <div className="flex items-center justify-between p-3 bg-accent/50 rounded-lg">
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full bg-yellow-500" />
-                        <span className="text-sm font-medium text-foreground">267 Pine Road</span>
+                    <div className="p-3 bg-accent/50 rounded-lg space-y-1">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="w-2 h-2 rounded-full bg-yellow-500" />
+                          <span className="text-sm font-medium text-foreground">267 Pine Road</span>
+                        </div>
+                        <span className="text-xs text-yellow-600 font-medium">Renewal Pending</span>
                       </div>
-                      <span className="text-xs text-muted-foreground">Lease ending</span>
+                      <p className="text-xs text-muted-foreground pl-5">Smart contract awaiting tenant signature</p>
                     </div>
-                    <div className="flex items-center justify-between p-3 bg-accent/50 rounded-lg">
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full bg-red-500" />
-                        <span className="text-sm font-medium text-foreground">55 Cedar Lane</span>
+                    <div className="p-3 bg-accent/50 rounded-lg space-y-1">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="w-2 h-2 rounded-full bg-blue-500" />
+                          <span className="text-sm font-medium text-foreground">55 Cedar Lane</span>
+                        </div>
+                        <span className="text-xs text-blue-600 font-medium">AI Pricing Active</span>
                       </div>
-                      <span className="text-xs text-muted-foreground">Vacant</span>
+                      <p className="text-xs text-muted-foreground pl-5">AI Optimal Price: $2,450/mo (+8% market)</p>
                     </div>
                   </div>
                 </div>
@@ -250,7 +262,7 @@ export default function PropertyPage() {
             <Card className="bg-card border-border/50 shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
-                  &ldquo;BeechTree cut our maintenance response time in half. Tenants are happier and so are we.&rdquo;
+                  &ldquo;The smart contract eliminated rent collection headaches. Payments are automatic—we haven&apos;t had a single late payment in 8 months.&rdquo;
                 </blockquote>
                 <div className="text-center space-y-1">
                   <p className="font-semibold text-foreground">Marcus T.</p>
@@ -262,7 +274,7 @@ export default function PropertyPage() {
             <Card className="bg-card border-border/50 shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
-                  &ldquo;The automated rent collection feature alone has saved us countless hours every month.&rdquo;
+                  &ldquo;The AI predicted a water heater failure two weeks before it happened. We avoided a $5,000 emergency repair.&rdquo;
                 </blockquote>
                 <div className="text-center space-y-1">
                   <p className="font-semibold text-foreground">Jennifer R.</p>
@@ -274,7 +286,7 @@ export default function PropertyPage() {
             <Card className="bg-card border-border/50 shadow-lg">
               <CardContent className="p-8 space-y-4">
                 <blockquote className="text-lg font-medium text-card-foreground text-center leading-relaxed">
-                  &ldquo;Finally, a property management system that actually understands what we need.&rdquo;
+                  &ldquo;Accepting crypto opened us to new tenants. Smart contracts handle conversion—we get dollars, they pay in USDC.&rdquo;
                 </blockquote>
                 <div className="text-center space-y-1">
                   <p className="font-semibold text-foreground">David K.</p>
@@ -290,10 +302,10 @@ export default function PropertyPage() {
       <section className="py-20 px-4 lg:px-8">
         <div className="container mx-auto max-w-4xl text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
-            Ready to Simplify Property Management?
+            Ready for AI-Powered, Blockchain-Secured Property Management?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Join property professionals who trust BeechTree to manage their portfolios efficiently.
+            Eliminate late payments. Predict maintenance before it fails. Let smart contracts handle the rest.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/property/contact">
@@ -315,24 +327,24 @@ export default function PropertyPage() {
                 <Image src="/images/tree-logo-yellow.webp" alt="BeechTree Logo" width={32} height={32} className="w-8 h-8" />
                 <span className="text-xl font-semibold text-foreground">BeechTree</span>
               </div>
-              <p className="text-sm text-muted-foreground">Smart property management solutions</p>
+              <p className="text-sm text-muted-foreground">AI + blockchain property management</p>
             </div>
             <div>
               <h3 className="font-semibold text-foreground mb-4">Solutions</h3>
               <ul className="space-y-2">
                 <li>
                   <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    Tenant Management
+                    AI Tenant Intelligence
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    Maintenance
+                    Predictive Maintenance
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    Financials
+                    Smart Contract Payments
                   </a>
                 </li>
               </ul>

@@ -1,5 +1,7 @@
 import {
   signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
   signOut as firebaseSignOut,
   onAuthStateChanged as firebaseOnAuthStateChanged,
   User,
@@ -7,6 +9,9 @@ import {
   Unsubscribe,
 } from "firebase/auth";
 import { auth } from "./config";
+
+// Google Auth Provider
+const googleProvider = new GoogleAuthProvider();
 
 // T004: AuthState TypeScript interface
 export interface AuthState {
@@ -46,6 +51,25 @@ export async function signIn(
     return { user: userCredential.user, error: null };
   } catch (error: unknown) {
     const firebaseError = error as { code?: string };
+    const errorMessage = getAuthErrorMessage(firebaseError.code || "unknown");
+    return { user: null, error: errorMessage };
+  }
+}
+
+export async function signInWithGoogle(): Promise<{ user: User | null; error: string | null }> {
+  if (!auth) {
+    return { user: null, error: getAuthErrorMessage("not-configured") };
+  }
+
+  try {
+    const userCredential = await signInWithPopup(auth, googleProvider);
+    return { user: userCredential.user, error: null };
+  } catch (error: unknown) {
+    const firebaseError = error as { code?: string };
+    // Handle popup closed by user
+    if (firebaseError.code === "auth/popup-closed-by-user") {
+      return { user: null, error: null }; // Not an error, user just cancelled
+    }
     const errorMessage = getAuthErrorMessage(firebaseError.code || "unknown");
     return { user: null, error: errorMessage };
   }

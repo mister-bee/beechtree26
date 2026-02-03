@@ -73,7 +73,7 @@ function LoginContent() {
           </Suspense>
 
           <p className="mt-6 text-center text-sm text-muted-foreground">
-            Sign in with your credentials from any Kansha, Layla, or any BeechTree application.
+            Sign in with your credentials from Kansha, Layla, or any BeechTree application.
           </p>
         </CardContent>
       </Card>

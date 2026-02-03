@@ -6,6 +6,7 @@ import { Zap, CheckCircle2, ArrowRight, TrendingUp, Bot, Globe, Target, Sparkles
 import Image from "next/image"
 import Link from "next/link"
 import { BusinessDropdown } from "@/components/ui/business-dropdown"
+import { NavbarAuthButton } from "@/components/auth/navbar-auth-button"
 import {
   Dialog,
   DialogContent,
@@ -233,6 +234,7 @@ export default function MarketingPage() {
               <Link href="/marketing/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Contact
               </Link>
+              <NavbarAuthButton />
             </div>
           </div>
         </div>

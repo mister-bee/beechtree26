@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { BusinessDropdown } from "@/components/ui/business-dropdown"
+import { NavbarAuthButton } from "@/components/auth/navbar-auth-button"
 import { Shield, Users, Lock, CheckCircle2, ArrowRight, ShieldCheck, EyeOff, Database, Server, KeyRound } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -26,9 +27,7 @@ export default function HomePage() {
               <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Contact
               </Link>
-              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Get Started
-              </Button>
+              <NavbarAuthButton />
             </div>
           </div>
         </div>

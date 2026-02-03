@@ -4,6 +4,7 @@ import { Building2, Brain, FileCode, Coins, CheckCircle2, ArrowRight } from "luc
 import Image from "next/image"
 import Link from "next/link"
 import { BusinessDropdown } from "@/components/ui/business-dropdown"
+import { NavbarAuthButton } from "@/components/auth/navbar-auth-button"
 
 export default function PropertyPage() {
   return (
@@ -26,6 +27,7 @@ export default function PropertyPage() {
               <Link href="/property/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Contact
               </Link>
+              <NavbarAuthButton />
             </div>
           </div>
         </div>

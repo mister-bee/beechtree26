@@ -16,6 +16,20 @@ function LoginContent() {
   const searchParams = useSearchParams();
   const returnUrl = searchParams.get("returnUrl") || "/";
 
+  // Determine theme based on returnUrl
+  const getThemeClass = () => {
+    if (returnUrl.startsWith("/marketing")) return "theme-blue";
+    if (returnUrl.startsWith("/property")) return "theme-yellow";
+    return ""; // default green for software/main
+  };
+
+  // Get the correct logo based on theme
+  const getLogoSrc = () => {
+    if (returnUrl.startsWith("/marketing")) return "/images/tree-logo-blue.webp";
+    if (returnUrl.startsWith("/property")) return "/images/tree-logo-yellow.webp";
+    return "/images/treelogo2.webp"; // default green
+  };
+
   // Redirect if already authenticated
   useEffect(() => {
     if (!loading && user) {
@@ -38,27 +52,20 @@ function LoginContent() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-background px-4">
-      {/* Logo and branding */}
-      <Link href="/" className="mb-8 flex items-center gap-2">
-        <Image
-          src="/images/treelogo2.webp"
-          alt="BeechTree Logo"
-          width={40}
-          height={40}
-          className="w-10 h-10"
-        />
-        <span className="text-2xl font-semibold text-foreground">BeechTree</span>
-      </Link>
-
+    <div className={`min-h-screen flex flex-col items-center justify-center bg-background px-4 ${getThemeClass()}`}>
       {/* Login card - T031: Responsive down to 320px */}
       <Card className="w-full max-w-md border-border/50 shadow-lg">
         <CardContent className="p-6 sm:p-8">
-          <div className="text-center mb-6">
-            <h1 className="text-2xl font-bold text-foreground">Welcome back</h1>
-            <p className="text-muted-foreground mt-2">
-              Sign in with your Kansha account
-            </p>
+          {/* Logo inside the card */}
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <Image
+              src={getLogoSrc()}
+              alt="BeechTree Logo"
+              width={48}
+              height={48}
+              className="w-12 h-12"
+            />
+            <span className="text-2xl font-semibold text-foreground">BeechTree</span>
           </div>
 
           <Suspense fallback={<div>Loading...</div>}>
@@ -66,10 +73,7 @@ function LoginContent() {
           </Suspense>
 
           <p className="mt-6 text-center text-sm text-muted-foreground">
-            Don&apos;t have an account?{" "}
-            <span className="text-foreground">
-              Register through the Kansha app
-            </span>
+            Sign in with your credentials from any Kansha, Layla, or any BeechTree application.
           </p>
         </CardContent>
       </Card>

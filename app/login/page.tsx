@@ -57,13 +57,13 @@ function LoginContent() {
       <Card className="w-full max-w-md border-border/50 shadow-lg">
         <CardContent className="p-6 sm:p-8">
           {/* Logo inside the card */}
-          <div className="flex items-center justify-center gap-3 mb-8">
+          <div className="flex flex-col items-center justify-center mb-8">
             <Image
               src={getLogoSrc()}
               alt="BeechTree Logo"
-              width={48}
-              height={48}
-              className="w-12 h-12"
+              width={96}
+              height={96}
+              className="w-24 h-24 mb-3"
             />
             <span className="text-2xl font-semibold text-foreground">BeechTree</span>
           </div>

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { signIn, signInWithGoogle } from "@/lib/firebase/auth";
-import { Loader2 } from "lucide-react";
+import { Loader2, Mail } from "lucide-react";
 
 // Google Icon SVG Component
 function GoogleIcon({ className }: { className?: string }) {
@@ -40,6 +40,7 @@ export function LoginForm() {
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
+  const [showEmailForm, setShowEmailForm] = useState(false);
 
   // T011: Implement form submission that calls signIn
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -85,118 +86,135 @@ export function LoginForm() {
 
   return (
     <div className="space-y-4">
-      {/* Google Sign-In Button */}
-      <Button
-        type="button"
-        variant="outline"
-        onClick={handleGoogleSignIn}
-        disabled={isGoogleLoading || isLoading}
-        className="w-full min-h-[44px] border-border hover:bg-accent"
-      >
-        {isGoogleLoading ? (
-          <>
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Signing in...
-          </>
-        ) : (
-          <>
-            <GoogleIcon className="mr-2 h-5 w-5" />
-            Continue with Google
-          </>
-        )}
-      </Button>
-
-      {/* Divider */}
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t border-border" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-card px-2 text-muted-foreground">or</span>
-        </div>
-      </div>
-
-      {/* Email/Password Form */}
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="space-y-2">
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-foreground"
+      {!showEmailForm ? (
+        <>
+          {/* Google Sign-In Button */}
+          <Button
+            type="button"
+            variant="outline"
+            onClick={handleGoogleSignIn}
+            disabled={isGoogleLoading || isLoading}
+            className="w-full min-h-[44px] border-border hover:bg-accent"
           >
-            Email
-          </label>
-          <input
-            id="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            autoComplete="email"
-            aria-describedby={error ? "login-error" : undefined}
-            className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground
-                       focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
-                       min-h-[44px]"
-            placeholder="you@example.com"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label
-            htmlFor="password"
-            className="block text-sm font-medium text-foreground"
-          >
-            Password
-          </label>
-          <input
-            id="password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            autoComplete="current-password"
-            aria-describedby={error ? "login-error" : undefined}
-            className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground
-                       focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
-                       min-h-[44px]"
-            placeholder="Enter your password"
-          />
-        </div>
-
-        {/* T027: Inline error message with accessible aria-describedby linking */}
-        {error && (
-          <div
-            id="login-error"
-            role="alert"
-            className="p-3 rounded-lg bg-destructive/10 border border-destructive/20 text-destructive text-sm"
-          >
-            <p>{error}</p>
-            {error.includes("Network") && (
-              <button
-                type="button"
-                onClick={handleRetry}
-                className="mt-2 text-sm underline hover:no-underline"
-              >
-                Try again
-              </button>
+            {isGoogleLoading ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Signing in...
+              </>
+            ) : (
+              <>
+                <GoogleIcon className="mr-2 h-5 w-5" />
+                Continue with Google
+              </>
             )}
-          </div>
-        )}
+          </Button>
 
-        <Button
-          type="submit"
-          disabled={isLoading || isGoogleLoading}
-          className="w-full min-h-[44px] bg-primary text-primary-foreground hover:bg-primary/90"
-        >
-          {isLoading ? (
-            <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Signing in...
-            </>
-          ) : (
-            "Sign In"
-          )}
-        </Button>
-      </form>
+          {/* Email Log-in Button */}
+          <Button
+            type="button"
+            variant="outline"
+            onClick={() => setShowEmailForm(true)}
+            disabled={isGoogleLoading}
+            className="w-full min-h-[44px] border-border hover:bg-accent"
+          >
+            <Mail className="mr-2 h-5 w-5" />
+            Email Log-in
+          </Button>
+        </>
+      ) : (
+        <>
+          {/* Email/Password Form */}
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="space-y-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-foreground"
+              >
+                Email
+              </label>
+              <input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                autoComplete="email"
+                aria-describedby={error ? "login-error" : undefined}
+                className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground
+                           focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
+                           min-h-[44px]"
+                placeholder="you@example.com"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-foreground"
+              >
+                Password
+              </label>
+              <input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                autoComplete="current-password"
+                aria-describedby={error ? "login-error" : undefined}
+                className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground
+                           focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
+                           min-h-[44px]"
+                placeholder="Enter your password"
+              />
+            </div>
+
+            {/* T027: Inline error message with accessible aria-describedby linking */}
+            {error && (
+              <div
+                id="login-error"
+                role="alert"
+                className="p-3 rounded-lg bg-destructive/10 border border-destructive/20 text-destructive text-sm"
+              >
+                <p>{error}</p>
+                {error.includes("Network") && (
+                  <button
+                    type="button"
+                    onClick={handleRetry}
+                    className="mt-2 text-sm underline hover:no-underline"
+                  >
+                    Try again
+                  </button>
+                )}
+              </div>
+            )}
+
+            <Button
+              type="submit"
+              disabled={isLoading || isGoogleLoading}
+              className="w-full min-h-[44px] bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Signing in...
+                </>
+              ) : (
+                "Sign In"
+              )}
+            </Button>
+          </form>
+
+          {/* Back to options link */}
+          <button
+            type="button"
+            onClick={() => setShowEmailForm(false)}
+            className="w-full text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            &larr; Back to sign-in options
+          </button>
+        </>
+      )}
     </div>
   );
 }

@@ -486,13 +486,13 @@ export default function MarketingPage() {
                 <div className="space-y-6">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary">
                     <Sparkles className="w-4 h-4" />
-                    Flagship Technology
+                    Your Personal AI Agent
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-foreground text-balance">
                     Meet Layla
                   </h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    Our agentic AI platform that doesn&apos;t just execute—it <span className="text-foreground font-medium">learns, adapts, and evolves</span>. Layla creates intelligent marketing personas that understand your market and grow smarter with every interaction.
+                    Your dedicated AI agent that works <span className="text-foreground font-medium">exclusively for you</span>. Unlike networked AI systems that share data across agents, Layla keeps your strategy private—learning your business, executing your marketing, and answering only to you.
                   </p>
                   <div className="grid sm:grid-cols-3 gap-4 pt-4">
                     <div className="flex items-start gap-3">
@@ -500,8 +500,8 @@ export default function MarketingPage() {
                         <Brain className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <p className="font-medium text-foreground">Learns</p>
-                        <p className="text-sm text-muted-foreground">From every market signal</p>
+                        <p className="font-medium text-foreground">Private</p>
+                        <p className="text-sm text-muted-foreground">Your data stays yours</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -509,8 +509,8 @@ export default function MarketingPage() {
                         <RefreshCw className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <p className="font-medium text-foreground">Adapts</p>
-                        <p className="text-sm text-muted-foreground">As conditions change</p>
+                        <p className="font-medium text-foreground">Dedicated</p>
+                        <p className="text-sm text-muted-foreground">Works only for you</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -518,15 +518,15 @@ export default function MarketingPage() {
                         <Users className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <p className="font-medium text-foreground">Personas</p>
-                        <p className="text-sm text-muted-foreground">That evolve over time</p>
+                        <p className="font-medium text-foreground">Autonomous</p>
+                        <p className="text-sm text-muted-foreground">Takes action on your behalf</p>
                       </div>
                     </div>
                   </div>
                   <Dialog>
                     <DialogTrigger asChild>
                       <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-                        Learn More About Layla
+                        Meet Your Private AI Agent
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
                     </DialogTrigger>
@@ -536,45 +536,45 @@ export default function MarketingPage() {
                           <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                             <Sparkles className="w-5 h-5 text-primary" />
                           </div>
-                          <DialogTitle className="text-xl">Layla: Agentic Marketing Intelligence</DialogTitle>
+                          <DialogTitle className="text-xl">Layla: Your Private AI Marketing Agent</DialogTitle>
                         </div>
                         <DialogDescription className="text-base">
-                          The first marketing platform with true agentic AI—personas that think, learn, and act on your behalf.
+                          A personal AI agent that works exclusively for your business—secure, private, and loyal only to you.
                         </DialogDescription>
                       </DialogHeader>
                       <div className="space-y-6 mt-4">
                         <div className="grid grid-cols-2 gap-4">
                           <div className="bg-primary/5 rounded-lg p-4 text-center">
-                            <p className="text-2xl font-bold text-primary">Agentic</p>
-                            <p className="text-sm text-muted-foreground">Autonomous decision-making</p>
+                            <p className="text-2xl font-bold text-primary">Private</p>
+                            <p className="text-sm text-muted-foreground">No external agent networks</p>
                           </div>
                           <div className="bg-primary/5 rounded-lg p-4 text-center">
-                            <p className="text-2xl font-bold text-primary">Evolving</p>
-                            <p className="text-sm text-muted-foreground">Smarter every day</p>
+                            <p className="text-2xl font-bold text-primary">Dedicated</p>
+                            <p className="text-sm text-muted-foreground">Works only for you</p>
                           </div>
                         </div>
                         <div className="space-y-4">
-                          <h4 className="font-semibold text-foreground">How Layla Works</h4>
+                          <h4 className="font-semibold text-foreground">Why Layla Is Different</h4>
                           <div className="border-l-2 border-primary/30 pl-4">
-                            <p className="font-medium text-foreground">Intelligent Personas</p>
-                            <p className="text-sm text-muted-foreground">Layla creates AI personas that represent different aspects of your marketing strategy—each one learns independently and collaborates intelligently.</p>
+                            <p className="font-medium text-foreground">No Multi-Agent Gossip</p>
+                            <p className="text-sm text-muted-foreground">Unlike AI systems that communicate with external agents, Layla doesn&apos;t share your data or strategies with anyone. Your competitive intelligence stays yours.</p>
                           </div>
                           <div className="border-l-2 border-primary/30 pl-4">
-                            <p className="font-medium text-foreground">Continuous Market Learning</p>
-                            <p className="text-sm text-muted-foreground">Every interaction, trend, and market shift feeds back into Layla&apos;s understanding. Your marketing gets smarter without any manual updates.</p>
+                            <p className="font-medium text-foreground">Persistent Memory, Private Context</p>
+                            <p className="text-sm text-muted-foreground">Layla remembers everything about your business—your voice, your market, your goals—without leaking insights to shared AI networks.</p>
                           </div>
                           <div className="border-l-2 border-primary/30 pl-4">
-                            <p className="font-medium text-foreground">Adaptive Strategy Execution</p>
-                            <p className="text-sm text-muted-foreground">When the market changes, Layla doesn&apos;t wait for instructions—it adapts your strategy in real-time based on what it&apos;s learned.</p>
+                            <p className="font-medium text-foreground">Autonomous Action, Your Authority</p>
+                            <p className="text-sm text-muted-foreground">Layla executes marketing tasks independently—publishing content, optimizing campaigns, engaging leads—but always under your control and visibility.</p>
                           </div>
                           <div className="border-l-2 border-primary/30 pl-4">
-                            <p className="font-medium text-foreground">Cross-Platform Intelligence</p>
-                            <p className="text-sm text-muted-foreground">Insights from one channel inform actions on another. Layla sees the full picture and optimizes holistically.</p>
+                            <p className="font-medium text-foreground">Secure Integrations</p>
+                            <p className="text-sm text-muted-foreground">Connect your tools and platforms securely. Layla works across your stack without exposing your data to external AI ecosystems.</p>
                           </div>
                         </div>
                         <Link href="/marketing/contact">
                           <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                            See Layla in Action
+                            Get Your Own Layla Agent
                             <ArrowRight className="ml-2 w-4 h-4" />
                           </Button>
                         </Link>
@@ -591,25 +591,25 @@ export default function MarketingPage() {
                       </div>
                       <div>
                         <p className="font-semibold text-foreground">Layla</p>
-                        <p className="text-xs text-muted-foreground">Active &bull; Learning</p>
+                        <p className="text-xs text-muted-foreground">Active &bull; Private Mode</p>
                       </div>
                       <div className="ml-auto flex items-center gap-1">
                         <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                        <span className="text-xs text-green-500">Live</span>
+                        <span className="text-xs text-green-500">Secure</span>
                       </div>
                     </div>
                     <div className="space-y-3">
                       <div className="bg-accent/50 rounded-lg p-3">
-                        <p className="text-xs text-muted-foreground mb-1">Market Insight Detected</p>
-                        <p className="text-sm text-foreground">&ldquo;Competitor X shifted messaging to AI features. Adjusting your positioning to emphasize human + AI collaboration.&rdquo;</p>
+                        <p className="text-xs text-muted-foreground mb-1">Working For You</p>
+                        <p className="text-sm text-foreground">&ldquo;Detected competitor shift to AI messaging. Adjusting your positioning—this insight stays private to your account.&rdquo;</p>
                       </div>
                       <div className="bg-accent/50 rounded-lg p-3">
-                        <p className="text-xs text-muted-foreground mb-1">Persona Update</p>
-                        <p className="text-sm text-foreground">&ldquo;Enterprise Buyer persona updated: now prioritizes security messaging based on 47 recent interactions.&rdquo;</p>
+                        <p className="text-xs text-muted-foreground mb-1">Secure Memory</p>
+                        <p className="text-sm text-foreground">&ldquo;Updated buyer preferences based on 47 interactions. Data stored locally, never shared with external agents.&rdquo;</p>
                       </div>
                       <div className="bg-primary/10 rounded-lg p-3 border border-primary/20">
-                        <p className="text-xs text-primary mb-1">Action Taken</p>
-                        <p className="text-sm text-foreground">&ldquo;Published optimized content to 3 channels. Projected +23% AI citation rate.&rdquo;</p>
+                        <p className="text-xs text-primary mb-1">Action Taken (Your Authority)</p>
+                        <p className="text-sm text-foreground">&ldquo;Published content to 3 channels on your behalf. Full audit trail available.&rdquo;</p>
                       </div>
                     </div>
                   </div>

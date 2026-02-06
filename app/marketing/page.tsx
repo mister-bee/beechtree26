@@ -252,7 +252,7 @@ export default function MarketingPage() {
               Marketing That Works While You Sleep
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-              People don&apos;t Google anymore—they ask ChatGPT. We make sure AI recommends your business.
+              People don&apos;t Google anymore—they ask ChatGPT. Your own AI agent ensures you get recommended—securely, privately, working only for you.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <Link href="#services">
